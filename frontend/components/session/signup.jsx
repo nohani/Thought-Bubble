@@ -21,7 +21,7 @@ class Signup extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state)
-      //.then( () => this.props.history.push('/dashboard'))
+      .then( () => this.props.history.push('/dashboard'))
   }
 
   render() {
@@ -53,7 +53,7 @@ class Signup extends React.Component{
         <button onClick={this.handleSubmit}>Sign Up</button>
       </form>
       <Link to="/login">Login</Link>
-      <button onClick={this.props.demoLogin}>Demo Login</button>
+      {/* <button onClick={this.props.demoLogin}>Demo Login</button> */}
     </div>
     )
   }
