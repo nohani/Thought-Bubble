@@ -1,7 +1,7 @@
 import React from "react";
 import SignupContainer from './session/signup_container';
 import { Route, Switch } from 'react-router-dom';
-import NavBarContainer from './navbar/navbar_container';
+// import NavBarContainer from './navbar/navbar_container';
 import LoginContainer from './session/login_container';
 import SplashContainer from "./splash/splash_container";
 import Dashboard from "./dashboard/dashboard";
@@ -10,7 +10,7 @@ import {AuthRoute, ProtectedRoute } from "../utils/route_utils"
 const App = () => {
   return (
     <div>
-      <NavBarContainer />
+      {/* <NavBarContainer /> */}
     <Switch>
       <ProtectedRoute path="/dashboard" component={Dashboard} /> 
       <AuthRoute path="/login" component={LoginContainer} /> 

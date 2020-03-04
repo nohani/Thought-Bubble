@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../navbar/navbar';
 
 class Login extends React.Component {
   constructor(props) {
@@ -25,6 +26,8 @@ class Login extends React.Component {
 
   render() {
     return (
+      <div>
+        <NavBar />
       <div className="fullscreen">
         <div className="sess-sign-form">
           
@@ -51,6 +54,7 @@ class Login extends React.Component {
           <button className="sign-log" onClick={this.props.demoLogin}>Demo Login</button>
         </div>
       </div> 
+      </div>
     )
   }
 }

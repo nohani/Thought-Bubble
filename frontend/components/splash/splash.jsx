@@ -20,6 +20,7 @@ export default class Splash extends React.Component {
     return (
       <div className="fullscreen">
         <div className="container">
+          <div className="logo-thobu">Thought Bubble</div>
           <ul className="splash-list">
             <button className="main-buttons" onClick={() => this.handleSubmit("login")}>Login</button>
             <button className="main-buttons" onClick={() => this.handleSubmit("signup")}>Sign Up</button>

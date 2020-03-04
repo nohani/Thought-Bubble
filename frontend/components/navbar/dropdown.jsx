@@ -38,11 +38,11 @@ export default class Dropdown extends React.Component{
   render() {
     return (
       <div className="dropdown-container" >
-        <button onClick={this.handleClick} className="dropbtn">User</button>
+        <div onClick={this.handleClick} className="menu-icons"><i className="fas fa-user"></i></div>
         <div className={this.state.showDropdown ? "dropdown show" : "dropdown"} ref={this.ref}>
           <div id="myDropdown" className="dropdown-content">
             <ul>
-              <li className="dropdown-header"><strong>Account</strong> <Link to="/signup" onClick={this.props.logout}>Logout</Link></li>
+              <li className="dropdown-header"><strong>ACCOUNT</strong> <Link to="/signup" onClick={this.props.logout}>Logout</Link></li>
             </ul>
           </div>
         </div>

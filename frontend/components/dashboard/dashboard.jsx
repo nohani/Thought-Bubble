@@ -1,11 +1,23 @@
 import React from 'react';
+import DashboardBarContainer from './dashboard_bar_container';
 
-const Dashboard = (props) => {
-  return (
-    <div className="dashboard-fullscreen">
-      <h1> Dashboard </h1>
-    </div>
-  )
+class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    // will fetch all blog posts!!
+  }
+
+  render() {
+    return (
+      <div className="dashboard-fullscreen">
+        <DashboardBarContainer />
+        <h1> TEST </h1>
+      </div>
+    )
+  }
 }
 
 export default Dashboard;

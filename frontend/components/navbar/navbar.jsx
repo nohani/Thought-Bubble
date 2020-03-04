@@ -1,24 +1,13 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom'
-import Dropdown from './dropdown'
 
 
-export default ({ currentUser, logout }) => {
-
-  const display = currentUser ? (
-    <div>
-      {/* <span> {currentUser.username} </span> */}
-      {/* <button onClick={logout} className="link-button">Logout</button> */}
-      {/* ******************* */}
-      <Dropdown logout={logout}/>
-    </div>
-  ) : (
-    null
-  )
+export default (props) => {
 
   return (
-    <header>
-      {display}
+    <header className="splash-header">
+      <div className="single-letter"><Link to ="/">t</Link></div>
+      
       <Route path="/signup"
         render={() => (<Link to="/login" className="link-button">Login</Link>)}
       />

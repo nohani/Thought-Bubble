@@ -3,9 +3,8 @@ div, header {
  }
 
  body {
- font-family: sans-serif;
+ font-family: "Helvetica Neue", "Arial", "Helvetica";
  background-color:#011835;
- color: white;
 }
 
 label {
@@ -35,9 +34,8 @@ label {
 .sess-sign-form {
   display: flex;
   flex-wrap: wrap;
-  width: 250px;
-  border-radius: 2px;
- 
+  width: 300px;
+  border-radius: 3px;
 }
 
 .sess-sign-form input {
@@ -45,9 +43,20 @@ label {
   background-color: white;
   width: 100%;
   padding: 8px;
+  height: 45px;
   border-bottom: 1px solid lightgray;
-  font-size: 0.8em;
+  font-size: 14px;
+  font-family: "Helvetica Neue", "Arial", "Helvetica";
 }
+
+.sess-sign-form input:first-of-type {
+ border-radius: 2px 2px 0 0;
+}
+
+.sess-sign-form input:last-of-type {
+ border-radius: 0 0 2px 2px;
+}
+
 
 .sess-sign-form input:last-of-type {
  border-bottom: none;
@@ -58,13 +67,22 @@ label {
   border-radius: 1px;
   width: 100%;
   margin-top: 10px;
-  padding: 10px;
+  padding: 11px 10px 11px 13px;
   text-align: center;
   color: white;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   box-sizing: border-box;
 }
+
+// .main-buttons{ 
+//   width: 100%;
+//   height: 45px;
+//   margin-top: 12px;
+//   background-color: #00b8ff;
+//   border-radius: 2px;
+  
+// }
 
 .splash-list{
   display:flex;
@@ -72,11 +90,11 @@ label {
 }
 
 .container{ 
-  width: 200px;
+  width: 300px;
 
 }
 
-header {
+.splash-header {
   display: flex;
   justify-content: flex-end;
   position:relative;
@@ -111,8 +129,8 @@ header {
 
 .dropdown{
   position:absolute;
-  top: 35px;
-  right: 40px;
+  top: 53px;
+  right: 10px;
   background-color: #FFFFFF;
   color: #444444;
   width: 200px;
@@ -138,8 +156,64 @@ header {
   background-color: #F2F2F2;
   border-bottom: 1px solid lightgray;
   border-radius: 3px 3px 0 0 ;
+  align-items: baseline;
 }
 
 .dropdown strong {
   font-weight: bold;
+  font-size: 0.8em;
 }
+
+.dashboard-header {
+  padding-bottom: 10px;
+  height: 54px;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-icons{
+  color:rgba(255, 255, 255, 0.5);
+  font-size: 25px;
+  margin: 0 10px;
+}
+
+.menu-icons:hover{
+  color:rgba(255, 255, 255, 1);
+  font-size: 25px;
+  margin: 0 10px;
+}
+
+.menu-bar > ul {
+  display:flex;
+  justify-content: space-evenly;
+  align-self: flex-end;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.logo-thobu{
+  font-family: 'Spartan', sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 3.5em;
+  text-align: center;
+  margin-bottom: 25px;
+  padding-top: 10px;
+  border-radius: 5px;
+  // border: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.single-letter{
+  font-family: 'Spartan', sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 2.5em;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+
+
