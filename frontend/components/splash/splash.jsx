@@ -13,17 +13,19 @@ export default class Splash extends React.Component {
 
   handleDemoSubmit() {
    this.props.demoLogin()
-      .then(this.props.history.push('/dashboard'))
+      // .then(this.props.history.push('/dashboard'))
   }
 
   render() {
     return (
-      <div className="container">
-        <ul className="splash-list">
-          <button className="main-buttons" onClick={() => this.handleSubmit("login")}>Login</button>
-          <button className="main-buttons" onClick={() => this.handleSubmit("signup")}>Sign Up</button>
-          <button className="main-buttons" onClick={() => this.handleDemoSubmit()}>Demo Login</button>
-        </ul>
+      <div className="fullscreen">
+        <div className="container">
+          <ul className="splash-list">
+            <button className="main-buttons" onClick={() => this.handleSubmit("login")}>Login</button>
+            <button className="main-buttons" onClick={() => this.handleSubmit("signup")}>Sign Up</button>
+            <button className="main-buttons" onClick={() => this.handleDemoSubmit()}>Demo Login</button>
+          </ul>
+        </div>
       </div>
     )
   }

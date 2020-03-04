@@ -1,19 +1,28 @@
 import React from 'react';
+import {Link, Route} from 'react-router-dom'
 
 
-export default ({ currentUser, logout }) => {
+export default ({ currentUser, path, logout }) => {
+
   const display = currentUser ? (
     <div>
-    <span className="greeting">Hello {currentUser.username} </span>
-    <button onClick={logout} className="logout">Logout</button>
+    {/* <span> {currentUser.username} </span> */}
+    <button onClick={logout} className="link-button">Logout</button>
+    
     </div>
   ) : (
     null
   )
 
   return (
-    <div>
+    <header>
       {display}
-    </div>
+      <Route path="/signup"
+        render={() => (<Link to="/login" className="link-button">Login</Link>)}
+      />
+      <Route path="/login"
+        render={() => (<Link to="/signup" className="link-button">Sign up</Link>)}
+      />
+    </header>
   )
 }

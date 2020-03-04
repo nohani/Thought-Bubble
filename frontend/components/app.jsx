@@ -4,18 +4,18 @@ import { Route, Switch } from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import LoginContainer from './session/login_container';
 import SplashContainer from "./splash/splash_container";
-import Dashboard from "./dashboard/dashboard"
+import Dashboard from "./dashboard/dashboard";
+import {AuthRoute, ProtectedRoute } from "../utils/route_utils"
 
 const App = () => {
   return (
     <div>
       <NavBarContainer />
-    <h1>Welcome!</h1>
     <Switch>
-      <Route path="/dashboard" component={Dashboard} /> 
-      <Route path="/login" component={LoginContainer} /> 
-      <Route path="/signup" component={SignupContainer} />
-      <Route path="/" component={SplashContainer}/>
+      <ProtectedRoute path="/dashboard" component={Dashboard} /> 
+      <AuthRoute path="/login" component={LoginContainer} /> 
+      <AuthRoute path="/signup" component={SignupContainer} />
+      <AuthRoute path="/" component={SplashContainer}/>
     </Switch>
     </div>
   )

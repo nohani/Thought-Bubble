@@ -2,7 +2,9 @@ import React from 'react';
 
 const Dashboard = (props) => {
   return (
-    <h1> TESTING THE DASHBOARD </h1>
+    <div className="dashboard">
+      <h1> Dashboard </h1>
+    </div>
   )
 }
 

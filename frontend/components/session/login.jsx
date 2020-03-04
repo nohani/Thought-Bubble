@@ -20,33 +20,37 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state)
-    .then( () => this.props.history.push('/dashboard'))
+    // .then( () => this.props.history.push('/dashboard'))
   }
 
   render() {
     return (
-      <div className="sess-sign-form">
-        <h2>Login</h2>
-        <form>
-          <label>
-            Email 
-          <input type="email"
-              value={this.state.email}
-              onChange={this.handleInput("email")}
-            />
-          </label>
-          <label>
-            Password
-          <input type="password"
-              value={this.state.password}
-              onChange={this.handleInput("password")}
-            />
-          </label>
-          <button onClick={this.handleSubmit}>Login</button>
-        </form>
-        <Link to="/signup">Sign Up</Link>
-        <button onClick={this.props.demoLogin}>Demo Login</button>
-      </div>
+      <div className="fullscreen">
+        <div className="sess-sign-form">
+          
+          <form className="form">
+            <label htmlFor="email">Email </label>
+            <input type="email"
+                value={this.state.email}
+                onChange={this.handleInput("email")}
+                placeholder="Email"
+                id="email"
+              />
+            
+            <label htmlFor="password"> Password  </label>
+            <input type="password"
+                value={this.state.password}
+                onChange={this.handleInput("password")}
+                placeholder = "Password"
+                id="password"
+              />
+          
+            <button onClick={this.handleSubmit} className="sign-log">Login</button>
+          </form>
+          
+          <button className="sign-log" onClick={this.props.demoLogin}>Demo Login</button>
+        </div>
+      </div> 
     )
   }
 }

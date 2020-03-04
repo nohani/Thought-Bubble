@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 class Signup extends React.Component{
   constructor(props) {
@@ -21,39 +21,41 @@ class Signup extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then( () => this.props.history.push('/dashboard'))
+      // .then( () => this.props.history.push('/dashboard'))
   }
 
   render() {
     return (
-    <div className="sess-sign-form">
-      <h2>Sign Up</h2>
-      <form>
-        <label>
-          Email
-          <input type="email" 
-                 value={this.state.email} 
-                 onChange={this.handleInput("email")} 
-          />
-        </label>
-        <label>
-          Password
-          <input type="password"
-            value={this.state.password}
-            onChange={this.handleInput("password")}
-          />
-        </label>
-        <label>
-          Username
-        <input type="username"
-            value={this.state.username}
-            onChange={this.handleInput("username")}
-          />
-        </label>
-        <button onClick={this.handleSubmit}>Sign Up</button>
-      </form>
-      <Link to="/login">Login</Link>
-      {/* <button onClick={this.props.demoLogin}>Demo Login</button> */}
+    <div className="fullscreen">
+      <div className="sess-sign-form">
+        <form className="form">
+            <label htmlFor="email"> Email    </label>
+            <input type="email" 
+                  value={this.state.email} 
+                  onChange={this.handleInput("email")} 
+                  placeholder="Email"
+                  id="email"
+            />
+      
+          <label htmlFor="password"> Password </label>
+            <input type="password"
+              value={this.state.password}
+              onChange={this.handleInput("password")}
+              placeholder="Password"
+              id="password"
+            />
+
+          <label htmlFor="username"> Username </label>
+          <input type="username"
+              value={this.state.username}
+              onChange={this.handleInput("username")}
+              placeholder="Username"
+              id="username"
+            />
+          <button onClick={this.handleSubmit} className="sign-log">Sign Up</button>
+        </form>
+        <button className="sign-log" onClick={this.props.demoLogin}>Demo Login</button>
+      </div>
     </div>
     )
   }
