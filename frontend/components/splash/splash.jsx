@@ -24,8 +24,8 @@ export default class Splash extends React.Component {
         <div className="container">
           <div className="logo-thobu">Thought Bubble</div>
           <ul className="splash-list">
-            <button className="main-buttons" onClick={() => this.handleSubmit("login")}>Login</button>
-            <button className="main-buttons" onClick={() => this.handleSubmit("signup")}>Sign Up</button>
+            <button className="main-buttons" onClick={() => this.handleSubmit("signup")}>Get Started</button>
+            <button className="main-buttons-white" onClick={() => this.handleSubmit("login")}>Login</button>
             <button className="main-buttons" onClick={() => this.handleDemoSubmit()}>Demo Login</button>
           </ul>
         </div>
