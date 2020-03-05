@@ -174,22 +174,26 @@ label {
 
 .menu-icons{
   color:rgba(255, 255, 255, 0.5);
-  font-size: 25px;
-  margin: 0 10px;
+  font-size: 20px;
+  margin: 0 16px;
+  margin-top: 8px;
 }
 
 .menu-icons:hover{
   color:rgba(255, 255, 255, 1);
-  font-size: 25px;
-  margin: 0 10px;
+  font-size: 20px;
+  margin: 0 16px;
+  margin-top: 8px;
+  cursor: pointer;
 }
 
 .menu-bar > ul {
   display:flex;
   justify-content: space-evenly;
   align-self: flex-end;
+  flex-direction: row-reverse;
   margin-top: 10px;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .logo-thobu{
@@ -212,8 +216,20 @@ label {
   font-size: 2.5em;
   position: absolute;
   top: 8px;
-  left: 10px;
+  left: 22px;
 }
 
+.session-errors {
+  font-size: 0.8em;
+  text-align: center;
+  color:red;
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+  width: 100%;
+  border-radius: 2px;
+}
 
-
+a:hover, button:hover{
+  cursor: pointer;
+}

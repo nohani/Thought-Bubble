@@ -7,13 +7,10 @@ export default ({ currentUser, logout }) => {
 
   const display = currentUser ? (
     <div className="menu-bar">
+      <div className="single-letter"><Link to="/dashboard">t</Link></div>
       <ul>
         <li><Dropdown logout={logout} /></li>
-        {/* <li><div className="menu-icons"><i className="fas fa-bolt"></i></div></li>
-        <li><div className="menu-icons"><i class="fas fa-comments"></i></div></li>
-        <li><div className="menu-icons"><i class="fas fa-envelope"></i></div></li>
-        <li><div className="menu-icons"><i class="far fa-compass"></i></div></li> */}
-        <li><div className="menu-icons"><i class="fas fa-home"></i></div></li>
+        <li><div className="menu-icons"><i className="fas fa-home"></i></div></li>
       </ul>
     </div>
   ) : (

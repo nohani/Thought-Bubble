@@ -5,4 +5,4 @@ import thunk from '../reducers/thunk';
 
 
 
-export default (preloadedState = {}) => createStore(rootReducer, preloadedState, applyMiddleware(thunk))
+export default (preloadedState = {}) => createStore(rootReducer, preloadedState, applyMiddleware(thunk, logger))

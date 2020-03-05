@@ -10,6 +10,11 @@ class Login extends React.Component {
       password: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+  }
+
+  componentWillUnmount(){
+    this.props.clearErrors();
   }
 
   handleInput(field) {
@@ -24,13 +29,26 @@ class Login extends React.Component {
     // .then( () => this.props.history.push('/dashboard'))
   }
 
+
+  renderErrors() {
+    return (
+      <ul class="session-errors">
+        {this.props.errors.map((error, i) => {
+          return <li key={i}>{error}</li>
+      })}
+      </ul>
+    ) 
+  }
+
   render() {
     return (
       <div>
         <NavBar />
-      <div className="fullscreen">
+       
+      <div className="fullscreen"> 
         <div className="sess-sign-form">
-          
+          <div className="logo-thobu">Thought Bubble</div>
+         {this.renderErrors()}
           <form className="form">
             <label htmlFor="email">Email </label>
             <input type="email"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Splash extends React.Component {
   constructor(props){
@@ -19,6 +20,7 @@ export default class Splash extends React.Component {
   render() {
     return (
       <div className="fullscreen">
+        <div className="single-letter"><Link to="/dashboard">t</Link></div>
         <div className="container">
           <div className="logo-thobu">Thought Bubble</div>
           <ul className="splash-list">

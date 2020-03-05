@@ -14,7 +14,6 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard-fullscreen">
         <DashboardBarContainer />
-        <h1> TEST </h1>
       </div>
     )
   }

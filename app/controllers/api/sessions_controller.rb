@@ -10,7 +10,7 @@ def create
     login(@user)
     render :show
   else
-    render json: "Invalid username and password combination"
+    render json: ["Invalid username and password combination"], status: 404
   end
 
 end
@@ -20,7 +20,7 @@ def destroy
     logout
     render json: {}
   else
-    render json: "Could not log out", status: 404
+    render json: ["Could not log out"], status: 404
   end
 end
 

@@ -20,3 +20,10 @@ export const deleteSession = () => {
     method: 'DELETE'
   })
 }
+
+export const fetchUsers = () => {
+  return $.ajax({
+    url: '/api/users',
+    method: 'GET'
+  })
+}
