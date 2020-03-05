@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :authored_posts, class_name: "Post", foreign_key: :author_id
+
   #FeGrip
   attr_reader :password
 
@@ -36,4 +38,6 @@ class User < ApplicationRecord
     @password = password
     self.password_digest = BCrypt::Password.create(password)
   end
+
+
 end
