@@ -7,4 +7,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchPosts: () => dispatch(fetchPosts())
 })
 
-export default connect(null, mapDispatchToProps)(AudioForm)
+export default connect(null, mapDispatchToProps)(AudioForm);
