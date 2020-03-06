@@ -4,11 +4,22 @@ class Api::PostsController < ApplicationController
       @posts = current_user.authored_posts
     end
 
-    def edit
+    def show
+      @post = current_user.authored_posts.find_by(id: params[:id])
+
+      if @post
+        render :show
+      else
+        render json: ['Post does not exist.'], status: 422
+      end
+
+    end
+
+    def update
       @post = current_user.authored_posts.find_by(id: params[:id])
 
       if @post.update(post_params)
-        render :index
+        render :show
       else
         render json: @post.errors.full_messages
       end
@@ -20,7 +31,7 @@ class Api::PostsController < ApplicationController
       if @post 
         @post.destroy
       else
-        render json: ["This post does not exist."]
+        render json: ["This post does not exist."], status: 422
       end
     end
 
