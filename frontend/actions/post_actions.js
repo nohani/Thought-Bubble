@@ -44,5 +44,8 @@ export const editPost = (post) => (dispatch) => PostAPIUtils.editPost(post)
 export const createPost = (post) => (dispatch) => PostAPIUtils.createPost(post)
   .then((post) => dispatch(receivePost(post)), (errors) => dispatch(receiveErrors(errors.responseJSON)));
 
+export const createMediaPost = (post) => (dispatch) => PostAPIUtils.createMediaPost(post)
+  .then((post) => dispatch(receivePost(post)), (errors) => dispatch(receiveErrors(errors.responseJSON)));
+
 export const deletePost = (postId) => (dispatch) => PostAPIUtils.deletePost(postId)
   .then(() => dispatch(removePost(postId)), (errors) => dispatch(receiveErrors(errors.responseJSON)));

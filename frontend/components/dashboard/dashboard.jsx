@@ -1,5 +1,6 @@
 import React from 'react';
 import DashboardBarContainer from './dashboard_bar_container';
+import PostBar from './post_bar/post_bar';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard-fullscreen">
         <DashboardBarContainer />
+        <PostBar />
       </div>
     )
   }

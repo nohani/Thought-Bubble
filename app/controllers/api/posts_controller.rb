@@ -40,7 +40,7 @@ class Api::PostsController < ApplicationController
       @post.author_id = current_user.id
 
       if @post.save
-        render :index
+        render :show
       else
         render json: @post.errors.full_messages
       end
@@ -49,6 +49,6 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:content, :post_type)
+      params.require(:post).permit(:title, :content, :quote, :link, :source, :post_type, :photo, :video, :audio)
     end
 end

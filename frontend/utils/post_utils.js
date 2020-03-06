@@ -16,7 +16,7 @@ export const editPost = (post) => {
   return $.ajax({
     url: `api/posts/${post.id}`,
     method: "GET",
-    post
+    data: { post }
   })
 }
 
@@ -31,6 +31,16 @@ export const createPost = (post) => {
   return $.ajax({
     url: `api/posts/`,
     method: "POST",
-    post
+    data: { post }
+  })
+}
+
+export const createMediaPost = (formData) => {
+  return $.ajax({
+    url: `api/posts/`,
+    method: "POST",
+    data: formData,
+    contentType: false,
+    processData: false
   })
 }

@@ -158,7 +158,7 @@ label {
 }
 
 .show{
-  display: block;
+  display: block !important;
 }
 
 .dashboard h1{
@@ -252,4 +252,73 @@ label {
 
 a:hover, button:hover{
   cursor: pointer;
+}
+
+.post-bar {
+  background-color: #FFFFFF;
+  width: 540px;
+  border-radius: 3px;
+  padding: 14px;
+}
+
+.post-bar-icons {
+  font-size: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-left: 10px;
+  box-sizing: fit-content;
+}
+
+.post-bar-icons > span {
+  font-size: 15px;
+  color: rgba(0,0,0,0.65)
+}
+
+
+.post-bar ul{
+  display: flex;
+}
+
+.post-bar-icons:hover{
+  cursor: pointer;
+}
+
+.post-form-text {
+  background-color: #FFFFFF;
+  display: none;
+}
+
+.post-form-photo {
+  background-color: #FFFFFF;
+  display: none;
+}
+
+.post-form-quote {
+  background-color: #FFFFFF;
+  display: none;
+}
+
+.post-form-link {
+  background-color: #FFFFFF;
+  display: none;
+}
+
+.post-form-chat {
+  background-color: #FFFFFF;
+  display: none;
+}
+
+.post-form-audio {
+  background-color: #FFFFFF;
+  display: none;
+}
+
+.post-form-video {
+  background-color: #FFFFFF;
+  display: none;
+}
+
+.post-form-container input {
+  background-color: gray;
 }

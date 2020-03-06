@@ -5,7 +5,6 @@ import { RECEIVE_POST_ERRORS,
   RECEIVE_POSTS } from '../../actions/post_actions'
 
 export default (state = [], action) => {
-  console.log(action.errors);
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_POST_ERRORS:
