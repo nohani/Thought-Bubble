@@ -59,14 +59,16 @@ export default class QuoteForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
 
             <label htmlFor="quote">Quote</label>
-            <textarea id="quote" value={this.state.quote} onChange={this.update('quote')} placeholder="Quote"/>
-
+            <textarea id="quote" rows="3" value={this.state.quote} onChange={this.update('quote')} placeholder='"Quote"'/>
+            <span>—</span>
             <label htmlFor="source">Source</label>
             <input type="text" id="source" value={this.state.source} onChange={this.update('source')} placeholder="Source"/>
 
-            <input type="submit" value="Post" />
+            <div className="form-buttons-quote">
+              <input className="form-post-button" type="submit" value="Post" />
+              <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+            </div>
           </form>
-          <button className="close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
         </div>
       </div>
     )

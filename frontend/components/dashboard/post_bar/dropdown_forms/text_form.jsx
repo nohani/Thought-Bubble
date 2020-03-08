@@ -58,14 +58,15 @@ export default class TextForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
 
               <label htmlFor="title">Title</label>
-              <input id="title" type="text" value={this.state.title} onChange={this.update('title')}/>
+              <input id="title" type="text" value={this.state.title} onChange={this.update('title')} placeholder="Title"/>
               
               <label htmlFor="content">Content</label>
-              <textarea id="content" value={this.state.content} onChange={this.update('content')} />
-
-              <input type="submit" value="Post" />
+              <textarea rows="6" id="content" value={this.state.content} onChange={this.update('content')} placeholder="Your text here"/>
+              <div className="form-buttons-text">
+                <input className="form-post-button" type="submit" value="Post" />
+                <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+              </div>
             </form>
-            <button className="close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
           </div>
       </div>
     )

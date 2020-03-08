@@ -292,9 +292,9 @@ a:hover, button:hover{
   display: flex;
 }
 
-.post-bar li{
-  border-right: 1px ridge rgba(0, 0, 0, 0.2);
-}
+// .post-bar li{
+//   border-right: 1px ridge rgba(0, 0, 0, 0.2);
+// }
 
 .post-bar li:last-of-type {
   border-right: 0;
@@ -303,23 +303,72 @@ a:hover, button:hover{
 .post-bar-icons:hover{
   cursor: pointer;
 }
+///////////GENERAL FORM STUFF//////
 
+.form-post-button{
+  background-color: #00b8ff;
+  font-size: 13px;
+  border-radius: 2px;
+  padding: 5px 7px;
+  color: white;
+  font-weight: bold;
+}
+
+.form-close-button{
+  background-color: #9da6af;
+  font-size: 13px;
+  border-radius: 2px;
+  padding: 5px 7px;
+  color: white;
+  font-weight: bold;
+}
+
+
+////////////TEXT-FORM//////////////
 
 .post-form-text {
-  background-color: red;
+  background-color: white;
   display: none;
   width: 540px;
   position: absolute;
   top: -14.5px;
   left: -20px;
-  height: 150px;
+  height: 250px;
   border-radius: 3px;
   z-index: 10;
+  padding: 15px;
 }
 
 .expand-text{
-  margin-bottom: 70px;
+  margin-bottom: 170px;
 }
+
+.post-form-text #title{
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+.post-form-text #title::placeholder{
+  color: #595959;
+  font-size: 12px;
+}
+
+.post-form-text textarea{
+  width: 100%;
+}
+
+.form-buttons-text{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 15px;
+  border-top: 1px solid lightgray;
+}
+
+
+////////////PHOTO-FORM//////////////
+
 
 .post-form-photo {
   background-color: white;
@@ -328,14 +377,55 @@ a:hover, button:hover{
   position: absolute;
   top: -14.5px;
   left: -82px;
-  height: 150px;
+  height: 250px;
   border-radius: 3px;
   z-index: 10;
 }
 
 .expand-photo{
-  margin-bottom: 70px;
+  margin-bottom: 170px;
 }
+
+.form-buttons-photo{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+}
+
+.post-form-photo #file {
+  color: transparent;
+}
+.post-form-photo #file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.post-form-photo #file{
+  content: 'Select a Photo';
+  color: gray;
+  display: block;
+  background: lightgray;
+  width: 100%;
+  height: 136px;
+  border-top: 2px dashed gray;
+  border-bottom: 2px dashed gray;
+  padding: 70px 0px 0 100px;
+  text-align: center;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 45px;
+}
+
+.post-form-photo #file:active {
+  outline: 0;
+}
+
+
+
+
+////////////QUOTE-FORM//////////////
+
 
 .post-form-quote {
   background-color:white;
@@ -344,14 +434,46 @@ a:hover, button:hover{
   position: absolute;
   top: -14.5px;
   left: -158px;
-  height: 150px;
+  height: 190px;
   border-radius: 3px;
   z-index: 10;
+  padding: 15px;
 }
 
 .expand-quote{
-  margin-bottom: 70px;
+  margin-bottom: 110px;
 }
+
+.form-buttons-quote{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 15px;
+  border-top: 1px solid lightgray;
+}
+
+.post-form-quote #quote{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.post-form-quote #quote::placeholder{
+  font-size: 3em;
+  font-family: "Times New Roman";
+}
+
+.post-form-quote #source{
+  margin-bottom: 30px;
+}
+
+.post-form-quote #source::placeholder{
+  font-size: 0.8em;
+}
+
+
+
+////////////LINK-FORM//////////////
+
 
 .post-form-link {
   background-color: white;
@@ -360,14 +482,32 @@ a:hover, button:hover{
   position: absolute;
   top: -14.5px;
   left: -236px;
-  height: 150px;
+  height: 225px;
   border-radius: 3px;
   z-index: 10;
 }
 
 .expand-link{
-  margin-bottom: 70px;
+  margin-bottom: 145px;
 }
+
+.post-form-link #link{
+  border-top: 2px dashed gray;
+  border-bottom: 1px dashed gray;
+  padding: 51px 40px;
+  background-color: lightgray;
+  width: 100%;
+  margin-top: 45px;
+}
+
+.form-buttons-link{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+}
+
+////////////CHAT-FORM//////////////
 
 .post-form-chat {
   background-color: white;
@@ -375,16 +515,46 @@ a:hover, button:hover{
   width: 540px;
   position: absolute;
   top: -14.5px;
-  left: -302px;
-  height: 150px;
+  left: -302.5px;
+  height: 290px;
   border-radius: 3px;
   z-index: 10;
+  padding: 15px;
+  border: 1px solid black;
 }
 
 .expand-chat{
-  margin-bottom: 70px;
+  margin-bottom: 210px;
 }
 
+.post-form-chat #title{
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+.post-form-chat #chat{
+  width: 100%;
+
+}
+
+.post-form-chat #chat::placeholder{
+  font-size: 0.8em;
+  font-weight: "Typewriter";
+  color: black;
+  line-height: 2;
+}
+
+.form-buttons-chat{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid lightgray;
+  padding: 15px;
+  margin-top: 15px
+}
+
+////////////AUDIO-FORM//////////////
 
 .post-form-audio {
   background-color: white;
@@ -393,14 +563,34 @@ a:hover, button:hover{
   position: absolute;
   top: -14.5px;
   left: -372.5px;
-  height: 150px;
+  height: 133px;
   border-radius: 3px;
   z-index: 10;
 }
 
 .expand-audio{
-  margin-bottom: 70px;
+  margin-bottom: 53px;
 }
+
+.post-form-audio #audio{
+  margin-top: 45px;
+  padding: 0 25px;
+}
+
+.post-form-audio #audio::placeholder{
+  font-size: 0.7em;
+}
+
+.form-buttons-audio{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid lightgray;
+  padding: 15px;
+  margin-top: 15px
+}
+
+////////////VIDEO-FORM//////////////
 
 .post-form-video {
   background-color: white;
@@ -409,21 +599,56 @@ a:hover, button:hover{
   position: absolute;
   top: -14.5px;
   left: -448px;
-  height: 150px;
+  height: 233px;
   border-radius: 3px;
   z-index: 10;
 }
 
 .expand-video{
-  margin-bottom: 70px;
+  margin-bottom: 153px;
 }
+
+.form-buttons-video{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+}
+
+.post-form-video #file {
+  color: transparent;
+}
+.post-form-video #file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.post-form-video #file{
+  content: 'Select a Photo';
+  color: gray;
+  display: block;
+  background: lightgray;
+  width: 100%;
+  height: 136px;
+  border-top: 2px dashed gray;
+  border-bottom: 2px dashed gray;
+  padding: 70px 0px 0 100px;
+  text-align: center;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 45px;
+}
+
+.post-form-video #file:active {
+  outline: 0;
+}
+
+
+////////////////////////////////
+
 
 .post-form-container{
   position: relative;
-}
-
-.post-form-container input {
-  background-color: lightgray;
 }
 
 .pbi-audio {
@@ -453,3 +678,25 @@ a:hover, button:hover{
 .pbi-video{
   color: #ff73d3;
 }
+
+i, span.post-bar-text {
+  margin-left: 4px;
+}
+
+// .dark-background{
+//   width: 100vw;
+//   height: 100vh;
+//   // background-color: rgba(0,25,53, 0.3);
+//   background-color: yellow;
+//   z-index: 5;
+//   position: absolute;
+//   display: none;
+//   top: 0;
+//   left: 0;
+// }
+
+
+
+
+
+

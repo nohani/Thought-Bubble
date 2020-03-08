@@ -6,6 +6,7 @@ export default class ChatForm extends React.Component {
 
     this.state = {
       showDropdown: false,
+      title: '',
       content: '',
       post_type: "chat"
     }
@@ -36,8 +37,9 @@ export default class ChatForm extends React.Component {
   }
 
   handleSubmit() {
-    const { content, post_type } = this.state
+    const { content, title, post_type } = this.state
     this.props.createPost({
+      title, 
       content,
       post_type
     });
@@ -56,12 +58,18 @@ export default class ChatForm extends React.Component {
         <div className={this.state.showDropdown ? "post-form-chat show" : "post-form-chat"}>
           <form onSubmit={this.handleSubmit}>
 
-            <label htmlFor="chat">Chat</label>
-            <textarea id="chat" value={this.state.content} onChange={this.update('content')} placeholder="chat" pattern="https://.*" />
+            <label htmlFor="title">Title</label>
+            <input id="title" type="text" value={this.state.title} onChange={this.update('title')} placeholder="Title" />
 
-            <input type="submit" value="Post" />
+            <label htmlFor="chat">Chat</label>
+            <textarea id="chat" rows="8" value={this.state.content} onChange={this.update('content')} 
+              placeholder="Sarah: Hey what's up?&#10;Troy: Nm, U?&#10;Sarah: Bored AF" />
+
+            <div className="form-buttons-chat">
+              <input className="form-post-button" type="submit" value="Post" />
+              <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+            </div>
           </form>
-          <button className="close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
         </div>
       </div>
     )

@@ -57,10 +57,11 @@ export default class PhotoForm extends React.Component {
 
             <label htmlFor="file">File</label>
             <input id="file" type="file" onChange={this.handleFile} />
-
-            <input type="submit" value="Post" />
+            <div className="form-buttons-photo">
+              <input className="form-post-button" type="submit" value="Post" />
+              <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+            </div>
           </form>
-          <button className="close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
         </div>
       </div>
     )

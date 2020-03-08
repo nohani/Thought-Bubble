@@ -6,14 +6,14 @@ export default class AudioForm extends React.Component {
 
     this.state = {
       showDropdown: false,
-      link: null,
+      link: "",
       post_type: "audio"
     }
 
     this.handleClick = this.handleClick.bind(this);
     this.toggleStateBoolean = this.toggleStateBoolean.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleFile = this.handleFile.bind(this);
+    // this.handleFile = this.handleFile.bind(this);
   }
 
 
@@ -24,8 +24,14 @@ export default class AudioForm extends React.Component {
     }
   }
 
-  handleFile(e) {
-    this.setState({ link: e.currentTarget.files[0] });
+  // handleFile(e) {
+  //   this.setState({ link: e.currentTarget.files[0] });
+  // }
+
+  update(field) {
+    return (e) => {
+      this.setState({ [field]: e.currentTarget.value });
+    }
   }
 
   toggleStateBoolean() {
@@ -48,19 +54,24 @@ export default class AudioForm extends React.Component {
   render() {
     return (
       <div className={this.state.showDropdown ? "post-form-container expand-audio": "post-form-container" } >
+        <div className={this.state.showDropdown ? "dark-background show" : "dark-background"}></div>
         <div onClick={this.handleClick} className="post-bar-icons pbi-audio">
           <i className="fas fa-headphones-alt"></i>
           <span className="post-bar-text">Audio</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-audio show" : "post-form-audio"}>
           <form onSubmit={this.handleSubmit}>
+            
+            <label htmlFor="audio">Audio</label>
+            <input type="url" id="audio" value={this.state.link} onChange={this.update('link')} placeholder="Type Audio URL here" pattern="https://.*" />
+            {/* <label htmlFor="file">File</label>
+            <input id="file" type="file" onChange={this.handleFile} /> */}
 
-            <label htmlFor="file">File</label>
-            <input id="file" type="file" onChange={this.handleFile} />
-
-            <input type="submit" value="Post" />
+            <div className="form-buttons-audio">
+              <input className="form-post-button" type="submit" value="Post" />
+              <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+            </div>
           </form>
-          <button className="close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
         </div>
       </div>
     )
