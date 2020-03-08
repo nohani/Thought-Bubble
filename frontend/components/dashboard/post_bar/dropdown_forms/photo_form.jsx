@@ -41,14 +41,14 @@ export default class PhotoForm extends React.Component {
     formData.append('post[photo]', this.state.link);
 
     this.props.createMediaPost(formData);
+    this.toggleStateBoolean();
   }
 
 
   render() {
-    console.log(this.state)
     return (
-      <div className="post-form-container" >
-        <div onClick={this.handleClick} className="post-bar-icons">
+      <div className={this.state.showDropdown ? "post-form-container expand-photo" : "post-show-container"} >
+        <div onClick={this.handleClick} className="post-bar-icons pbi-photo">
           <i className="fas fa-camera-retro"></i>
           <span className="post-bar-text">Photo</span>
         </div>

@@ -37,21 +37,23 @@ export default class QuoteForm extends React.Component {
   }
 
   handleSubmit() {
-    const { quote, source, post_type } = this.state
+    const { quote, source, post_type } = this.state;
     this.props.createPost({
       quote,
       source,
       post_type
     });
+    this.toggleStateBoolean();
   }
 
 
   render() {
     return (
-      <div className="post-form-container" >
-        <div onClick={this.handleClick} className="post-bar-icons">
+      <div className={this.state.showDropdown ? "post-form-container expand-quote" : "post-show-container"}
+>
+        <div onClick={this.handleClick} className="post-bar-icons pbi-quote">
           <i className="fas fa-quote-right"></i>
-          <span className="post-bar-quote">Quote</span>
+          <span className="post-bar-text">Quote</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-quote show" : "post-form-quote"}>
           <form onSubmit={this.handleSubmit}>

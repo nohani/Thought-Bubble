@@ -41,18 +41,18 @@ export default class AudioForm extends React.Component {
     formData.append('post[audio]', this.state.link);
 
     this.props.createMediaPost(formData);
+    this.toggleStateBoolean();
   }
 
 
   render() {
-    console.log(this.state)
     return (
-      <div className="post-form-container" >
-        <div onClick={this.handleClick} className="post-bar-icons">
+      <div className={this.state.showDropdown ? "post-form-container expand-audio": "post-form-container" } >
+        <div onClick={this.handleClick} className="post-bar-icons pbi-audio">
           <i className="fas fa-headphones-alt"></i>
           <span className="post-bar-text">Audio</span>
         </div>
-        <div className={this.state.showDropdown ? "post-form-photo show" : "post-form-photo"}>
+        <div className={this.state.showDropdown ? "post-form-audio show" : "post-form-audio"}>
           <form onSubmit={this.handleSubmit}>
 
             <label htmlFor="file">File</label>

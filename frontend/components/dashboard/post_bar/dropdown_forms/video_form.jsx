@@ -38,17 +38,17 @@ export default class VideoForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('post[post_type]', this.state.post_type);
-    formData.append('post[photo]', this.state.link);
+    formData.append('post[video]', this.state.link);
 
     this.props.createMediaPost(formData);
+    this.toggleStateBoolean();
   }
 
 
   render() {
-    console.log(this.state)
     return (
-      <div className="post-form-container" >
-        <div onClick={this.handleClick} className="post-bar-icons">
+      <div className={this.state.showDropdown ? "post-form-container expand-video" : "post-form-container"} >
+        <div onClick={this.handleClick} className="post-bar-icons pbi-video">
           <i className="fas fa-video"></i>
           <span className="post-bar-text">Video</span>
         </div>

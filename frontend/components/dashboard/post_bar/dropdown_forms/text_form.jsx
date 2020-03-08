@@ -43,13 +43,14 @@ export default class TextForm extends React.Component {
       content, 
       post_type
     });
+    this.toggleStateBoolean();
   }
 
 
   render() {
     return (
-      <div className="post-form-container" >
-        <div onClick={this.handleClick} className="post-bar-icons">
+      <div className={this.state.showDropdown ? "post-form-container expand-text" : "post-show-container"} >
+        <div onClick={this.handleClick} className="post-bar-icons pbi-text">
           <i className="fas fa-font"></i>
           <span className="post-bar-text">Text</span>
         </div>

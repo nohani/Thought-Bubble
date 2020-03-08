@@ -41,15 +41,16 @@ export default class LinkForm extends React.Component {
       link,
       post_type
     });
+    this.toggleStateBoolean();
   }
 
 
   render() {
     return (
-      <div className="post-form-container" >
-        <div onClick={this.handleClick} className="post-bar-icons">
+      <div className={this.state.showDropdown ? "post-form-container expand-link" : "post-show-container"} >
+        <div onClick={this.handleClick} className="post-bar-icons pbi-link">
           <i className="fas fa-link"></i>
-          <span className="post-bar-link">Link</span>
+          <span className="post-bar-text">Link</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-link show" : "post-form-link"}>
           <form onSubmit={this.handleSubmit}>

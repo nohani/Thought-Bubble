@@ -41,15 +41,17 @@ export default class ChatForm extends React.Component {
       content,
       post_type
     });
+
+    this.toggleStateBoolean();
   }
 
 
   render() {
     return (
-      <div className="post-form-container" >
-        <div onClick={this.handleClick} className="post-bar-icons">
+      <div className={this.state.showDropdown ? "post-form-container expand-chat" : "post-form-container"}>
+        <div onClick={this.handleClick} className="post-bar-icons pbi-chat">
           <i className="far fa-comment-alt"></i>
-          <span className="post-bar-chat">Chat</span>
+          <span className="post-bar-text">Chat</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-chat show" : "post-form-chat"}>
           <form onSubmit={this.handleSubmit}>
