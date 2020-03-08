@@ -346,12 +346,12 @@ a:hover, button:hover{
 .post-form-text #title{
   width: 100%;
   margin-bottom: 10px;
-  font-size: 2.5em;
+  padding: 15px 0;
 }
 
 .post-form-text #title::placeholder{
   color: #595959;
-  font-size: 12px;
+  font-size: 2.5em;
 }
 
 .post-form-text textarea{
