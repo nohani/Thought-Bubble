@@ -36,7 +36,8 @@ export default class QuoteForm extends React.Component {
     }
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault()
     const { quote, source, post_type } = this.state;
     this.props.createPost({
       quote,
@@ -56,7 +57,7 @@ export default class QuoteForm extends React.Component {
           <span className="post-bar-text">Quote</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-quote show" : "post-form-quote"}>
-          <form onSubmit={this.handleSubmit}>
+          <form>
 
             <label htmlFor="quote">Quote</label>
             <textarea id="quote" rows="3" value={this.state.quote} onChange={this.update('quote')} placeholder='"Quote"'/>
@@ -65,8 +66,8 @@ export default class QuoteForm extends React.Component {
             <input type="text" id="source" value={this.state.source} onChange={this.update('source')} placeholder="Source"/>
 
             <div className="form-buttons-quote">
-              <input className="form-post-button" type="submit" value="Post" />
               <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+              <input className="form-post-button" type="submit" value="Post" onClick={this.handleSubmit} />
             </div>
           </form>
         </div>

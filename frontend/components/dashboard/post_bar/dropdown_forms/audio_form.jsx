@@ -60,7 +60,7 @@ export default class AudioForm extends React.Component {
           <span className="post-bar-text">Audio</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-audio show" : "post-form-audio"}>
-          <form onSubmit={this.handleSubmit}>
+          <form>
             
             <label htmlFor="audio">Audio</label>
             <input type="url" id="audio" value={this.state.link} onChange={this.update('link')} placeholder="Type Audio URL here" pattern="https://.*" />
@@ -68,8 +68,8 @@ export default class AudioForm extends React.Component {
             <input id="file" type="file" onChange={this.handleFile} /> */}
 
             <div className="form-buttons-audio">
-              <input className="form-post-button" type="submit" value="Post" />
               <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+              <input className="form-post-button" onClick={this.handleSubmit} type="submit" value="Post" />
             </div>
           </form>
         </div>

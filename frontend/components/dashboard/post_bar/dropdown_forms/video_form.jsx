@@ -53,14 +53,14 @@ export default class VideoForm extends React.Component {
           <span className="post-bar-text">Video</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-video show" : "post-form-video"}>
-          <form onSubmit={this.handleSubmit}>
+          <form>
 
             <label htmlFor="file">File</label>
             <input id="file" type="file" onChange={this.handleFile} />
 
             <div className="form-buttons-video">
-              <input className="form-post-button" type="submit" value="Post" />
               <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+              <input className="form-post-button" type="submit" value="Post" onClick={this.handleSubmit} />
             </div>
           </form>
         </div>

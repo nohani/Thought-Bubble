@@ -276,12 +276,6 @@ a:hover, button:hover{
   box-sizing: fit-content;
 }
 
-.index-container {
-  width: 540px;
-  background-color: gray;
-  margin: auto;
-  margin-top: 20px;
-}
 
 .post-bar-icons > span.post-bar-text {
   font-size: 15px;
@@ -644,7 +638,7 @@ a:hover, button:hover{
 }
 
 
-////////////////////////////////
+//////////ICON-COLORS//////////////
 
 
 .post-form-container{
@@ -695,7 +689,129 @@ i, span.post-bar-text {
 //   left: 0;
 // }
 
+////////////POST INDEX STYLING/////////
+.index-container {
+  width: 540px;
+  margin: auto;
+  margin-top: 20px;
+}
 
+.username {
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-bottom: 15px;
+
+}
+
+.chat, .text, .quote, .audio, .video, .link{
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  padding: 20px;
+  font-family: "Gibson", "Helvetica Neue", sans-serif;
+}
+
+.photo{
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  padding: 20px 0 ;
+  font-family: "Gibson", "Helvetica Neue", sans-serif;
+
+}
+
+.photo .username{
+  margin-left:20px;
+}
+
+.photo .pii-bottom{
+  padding: 20px;
+}
+
+        //TEXT-POST//
+
+.text .text-title{
+  font-size: 2.5em;
+  margin-bottom: 5px;
+}
+
+.text .text-content{
+  font-size: 0.9em;
+}
+
+        //CHAT-POST//
+
+.chat .chat-title{
+  font-size: 2.5em;
+  margin-bottom: 5px;
+}
+
+        //QUOTE-POST//
+
+.quote .quote-quote{
+  font-size: 2.5em;
+  margin-bottom: 5px;
+  font-family: "Times New Roman", serif;
+}
+
+.quote .quote-source{
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  font-family: "Times New Roman", serif;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+       //BOTTOM-ICONS//
+
+.pii-bottom{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.pii-bottom ul{
+  display: flex;
+}
+
+.settings-dd-container {
+  position:relative;
+}
+
+.post-index-icons {
+  color: gray;
+}
+
+.post-index-icons:hover {
+  color: gray;
+  cursor:pointer;
+}
+
+.settings-dd {
+  display: none;
+  width: 150px;
+  position: absolute;
+  width: 100px;
+  background: white;
+  left: -30px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  padding: 5px 0;
+  border: 0.7px solid lightgray;
+}
+
+.settings-dd .sd-item {
+  padding: 5px 25px 5px 14px;
+  line-height: 2;
+  display: block;
+}
+
+.settings-dd .sd-item:hover {
+  padding: 5px 25px 5px 14px;
+  background-color: lightgray;
+  border-radius: 3px;
+  cursor: pointer;
+}
 
 
 

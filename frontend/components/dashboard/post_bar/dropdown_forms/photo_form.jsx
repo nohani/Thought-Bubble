@@ -32,6 +32,8 @@ export default class PhotoForm extends React.Component {
     if (this.state.showDropdown === true) {
       this.setState({ showDropdown: false });
     }
+
+    this.setState({ link: null})
   }
 
   handleSubmit(e) {
@@ -53,13 +55,13 @@ export default class PhotoForm extends React.Component {
           <span className="post-bar-text">Photo</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-photo show" : "post-form-photo"}>
-          <form onSubmit={this.handleSubmit}>
+          <form>
 
             <label htmlFor="file">File</label>
             <input id="file" type="file" onChange={this.handleFile} />
             <div className="form-buttons-photo">
-              <input className="form-post-button" type="submit" value="Post" />
               <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+              <input className="form-post-button" type="submit" value="Post" onClick={this.handleSubmit}/>
             </div>
           </form>
         </div>

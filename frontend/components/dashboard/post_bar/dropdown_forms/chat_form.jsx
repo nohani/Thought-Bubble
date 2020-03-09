@@ -56,7 +56,7 @@ export default class ChatForm extends React.Component {
           <span className="post-bar-text">Chat</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-chat show" : "post-form-chat"}>
-          <form onSubmit={this.handleSubmit}>
+          <form>
 
             <label htmlFor="title">Title</label>
             <input id="title" type="text" value={this.state.title} onChange={this.update('title')} placeholder="Title" />
@@ -66,8 +66,8 @@ export default class ChatForm extends React.Component {
               placeholder="Sarah: Hey what's up?&#10;Troy: Nm, U?&#10;Sarah: Bored AF" />
 
             <div className="form-buttons-chat">
-              <input className="form-post-button" type="submit" value="Post" />
               <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+              <input className="form-post-button" onClick={this.handleSubmit} type="submit" value="Post" />
             </div>
           </form>
         </div>

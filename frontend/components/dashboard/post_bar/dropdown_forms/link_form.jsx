@@ -53,14 +53,14 @@ export default class LinkForm extends React.Component {
           <span className="post-bar-text">Link</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-link show" : "post-form-link"}>
-          <form onSubmit={this.handleSubmit}>
+          <form>
 
             <label htmlFor="link">Link</label>
             <input type="url" id="link" value={this.state.link} onChange={this.update('link')} placeholder="Type URL here" pattern="https://.*"/>
 
             <div className="form-buttons-link">
-              <input className="form-post-button" type="submit" value="Post" />
               <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+              <input className="form-post-button" type="submit" value="Post" onClick={this.handleSubmit} />
             </div>
           </form>
         </div>

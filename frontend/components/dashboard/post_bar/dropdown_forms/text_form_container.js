@@ -2,9 +2,15 @@ import { connect } from 'react-redux';
 import TextForm from './text_form';
 import { createPost, fetchPosts } from '../../../../actions/post_actions'
 
+// const mapStateToProps = (state, ownProps) => ({
+//   ownProps: ownProps
+// })
 
-const mapDispatchToProps = (dispatch) => ({
-  createPost: (post) => dispatch(createPost(post)),
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  createPost: (post) => {
+    dispatch(createPost(post))
+    ownProps.history.push('/dashboard');
+  },
   fetchPosts: () => dispatch(fetchPosts())
 })
 

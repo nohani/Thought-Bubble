@@ -36,7 +36,8 @@ export default class TextForm extends React.Component {
     }
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     const { title, post_type, content } = this.state
     this.props.createPost({
       title, 
@@ -44,10 +45,12 @@ export default class TextForm extends React.Component {
       post_type
     });
     this.toggleStateBoolean();
+    // this.props.history.push("/dashboard");
   }
 
 
   render() {
+    console.log(this.props);
     return (
       <div className={this.state.showDropdown ? "post-form-container expand-text" : "post-show-container"} >
         <div onClick={this.handleClick} className="post-bar-icons pbi-text">
@@ -55,7 +58,7 @@ export default class TextForm extends React.Component {
           <span className="post-bar-text">Text</span>
         </div>
         <div className={this.state.showDropdown ? "post-form-text show" : "post-form-text"}>
-            <form onSubmit={this.handleSubmit}>
+            <form>
 
               <label htmlFor="title">Title</label>
               <input id="title" type="text" value={this.state.title} onChange={this.update('title')} placeholder="Title"/>
@@ -63,8 +66,9 @@ export default class TextForm extends React.Component {
               <label htmlFor="content">Content</label>
               <textarea rows="6" id="content" value={this.state.content} onChange={this.update('content')} placeholder="Your text here"/>
               <div className="form-buttons-text">
-                <input className="form-post-button" type="submit" value="Post" />
+                
                 <button className="form-close-button" onClick={() => this.toggleStateBoolean()}>Close</button>
+              <input className="form-post-button" type="submit" value="Post" onClick={this.handleSubmit} />
               </div>
             </form>
           </div>
