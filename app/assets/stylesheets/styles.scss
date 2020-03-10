@@ -327,25 +327,26 @@ a:hover, button:hover{
   position: absolute;
   top: -14.5px;
   left: -20px;
-  height: 250px;
+  height: 265px;
   border-radius: 3px;
   z-index: 10;
   padding: 15px;
 }
 
 .expand-text{
-  margin-bottom: 170px;
+  margin-bottom: 185px;
 }
 
 .post-form-text #title{
   width: 100%;
   margin-bottom: 10px;
   padding: 15px 0;
+  font-size: 30px;
 }
 
 .post-form-text #title::placeholder{
   color: #595959;
-  font-size: 2.5em;
+  font-size: 30px;
 }
 
 .post-form-text textarea{
@@ -370,14 +371,14 @@ a:hover, button:hover{
   width: 540px;
   position: absolute;
   top: -14.5px;
-  left: -82px;
-  height: 250px;
+  left: -82.5px;
+  height: 240px;
   border-radius: 3px;
   z-index: 10;
 }
 
 .expand-photo{
-  margin-bottom: 170px;
+  margin-bottom: 160px;
 }
 
 .form-buttons-photo{
@@ -510,15 +511,15 @@ a:hover, button:hover{
   position: absolute;
   top: -14.5px;
   left: -302.5px;
-  height: 290px;
+  height: 298px;
   border-radius: 3px;
   z-index: 10;
   padding: 15px;
-  border: 1px solid black;
+
 }
 
 .expand-chat{
-  margin-bottom: 210px;
+  margin-bottom: 217px;
 }
 
 .post-form-chat #title{
@@ -696,6 +697,11 @@ i, span.post-bar-text {
   margin-top: 20px;
 }
 
+.index-container>ul{
+  display:flex;
+  flex-direction: column-reverse;
+}
+
 .username {
   font-weight: bold;
   font-size: 0.8em;
@@ -703,7 +709,7 @@ i, span.post-bar-text {
 
 }
 
-.chat, .text, .quote, .audio, .video, .link{
+.chat, .text, .quote, .audio, .link{
   background-color: white;
   margin-bottom: 20px;
   border-radius: 3px;
@@ -711,7 +717,7 @@ i, span.post-bar-text {
   font-family: "Gibson", "Helvetica Neue", sans-serif;
 }
 
-.photo{
+.photo, .video {
   background-color: white;
   margin-bottom: 20px;
   border-radius: 3px;
@@ -724,7 +730,15 @@ i, span.post-bar-text {
   margin-left:20px;
 }
 
+.video .username{
+  margin-left:20px;
+}
+
 .photo .pii-bottom{
+  padding: 20px;
+}
+
+.video .pii-bottom{
   padding: 20px;
 }
 
@@ -762,6 +776,10 @@ i, span.post-bar-text {
   display: inline-block;
 }
 
+        //VIDEO-POST//
+.video video {
+  width: 100%;
+}
        //BOTTOM-ICONS//
 
 .pii-bottom{
@@ -813,6 +831,194 @@ i, span.post-bar-text {
   cursor: pointer;
 }
 
+//////////////EDIT FORMS////////
+
+.edit-form-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-form-buttons-2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px 0 15px;
+}
+
+.edit-form-buttons-audio {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px 0 15px;
+  border-top: 1px solid lightgray;
+}
+
+.text-edit, .quote-edit, 
+.chat-edit{
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  padding: 20px 0 ;
+  font-family: "Gibson", "Helvetica Neue", sans-serif;
+  padding: 15px;
+}
+
+ .photo-edit, .video-edit, .link-edit, .audio-edit{
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  padding: 20px 0 ;
+  font-family: "Gibson", "Helvetica Neue", sans-serif;
+  padding: 15px 0;
+}
+
+/////////TEXT//////////
 
 
+.text-edit #title{
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px 0;
+}
 
+.text-edit #title::placeholder{
+  color: #595959;
+  font-size: 2.5em;
+}
+
+.text-edit #title{
+  font-size: 2.5em;
+}
+
+.text-edit textarea{
+  width: 100%;
+}
+
+////////QUOTE/////////
+
+.quote-edit #title{
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px 0;
+  font-size: 2.5em;
+}
+
+.quote-edit #title::placeholder{
+  color: #595959;
+  font-size: 2.5em;
+}
+
+.quote-edit #source{
+  padding-bottom: 10px;
+}
+
+
+.quote-edit textarea{
+  width: 100%;
+}
+
+////////LINK/////////
+
+.link-edit #link{
+  border-top: 2px dashed gray;
+  border-bottom: 1px dashed gray;
+  padding: 51px 40px;
+  background-color: lightgray;
+  width: 100%;
+  margin-top: 45px;
+}
+
+///////CHAT////////
+
+
+.chat-edit #title{
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+.chat-edit #chat{
+  width: 100%;
+
+}
+
+.chat-edit #chat::placeholder{
+  font-size: 0.8em;
+  font-weight: "Typewriter";
+  color: black;
+  line-height: 2;
+}
+
+///////AUDIO////////
+
+.audio-edit #audio{
+  margin-top: 45px;
+  padding: 0 25px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.audio-edit #audio::placeholder{
+  font-size: 0.7em;
+}
+
+
+/////VIDEO//////
+
+.video-edit #file {
+  color: transparent;
+}
+.video-edit #file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.video-edit #file{
+  content: 'Select a Photo';
+  color: gray;
+  display: block;
+  background: lightgray;
+  width: 100%;
+  height: 136px;
+  border-top: 2px dashed gray;
+  border-bottom: 2px dashed gray;
+  padding: 70px 0px 0 100px;
+  text-align: center;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 45px;
+}
+
+.video-edit #file:active {
+  outline: 0;
+}
+
+
+/////PHOTO/////
+
+.photo-edit #file {
+  color: transparent;
+}
+.photo-edit #file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.photo-edit #file{
+  content: 'Select a Photo';
+  color: gray;
+  display: block;
+  background: lightgray;
+  width: 100%;
+  height: 136px;
+  border-top: 2px dashed gray;
+  border-bottom: 2px dashed gray;
+  padding: 70px 0px 0 100px;
+  text-align: center;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 45px;
+}
+
+.photo-edit #file:active {
+  outline: 0;
+}

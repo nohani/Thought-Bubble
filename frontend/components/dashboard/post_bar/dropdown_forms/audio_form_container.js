@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import AudioForm from './audio_form';
-import { createMediaPost, fetchPosts } from '../../../../actions/post_actions'
+import { createPost, fetchPosts } from '../../../../actions/post_actions'
 
 const mapDispatchToProps = (dispatch) => ({
-  createMediaPost: (post) => dispatch(createMediaPost(post)),
+  createPost: (post) => dispatch(createPost(post)),
   fetchPosts: () => dispatch(fetchPosts())
 })
 

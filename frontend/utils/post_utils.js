@@ -15,8 +15,18 @@ export const fetchPost = (postId) => {
 export const editPost = (post) => {
   return $.ajax({
     url: `api/posts/${post.id}`,
-    method: "GET",
+    method: "PATCH",
     data: { post }
+  })
+}
+
+export const editMediaPost = (formData, postId) => {
+  return $.ajax({
+    url: `api/posts/${postId}`,
+    method: "PATCH",
+    data: formData,
+    contentType: false,
+    processData: false
   })
 }
 

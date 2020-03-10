@@ -47,7 +47,7 @@ export default class SettingsDropdown extends React.Component {
           <i className="fas fa-cog"></i>
         </div>
         <div className={this.state.showDropdown ? "settings-dd show" : "settings-dd"} ref={this.ref}>
-            <div className="sd-item">Edit</div>
+            <div className="sd-item" onClick={() => this.props.editModeBoolean(true)}>Edit</div>
           <form>
             <div className="sd-item" onClick={this.handleDelete}>Delete</div>
           </form>

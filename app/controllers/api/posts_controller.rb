@@ -16,7 +16,7 @@ class Api::PostsController < ApplicationController
     end
 
     def update
-      @post = current_user.authored_posts.find_by(id: params[:id])
+      @post = current_user.authored_posts.find(params[:id])
 
       if @post.update(post_params)
         render :show
@@ -49,6 +49,6 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:title, :content, :quote, :link, :source, :post_type, :photo, :video, :audio)
+      params.require(:post).permit(:id, :title, :content, :quote, :link, :source, :post_type, :photo, :video, :audio)
     end
 end

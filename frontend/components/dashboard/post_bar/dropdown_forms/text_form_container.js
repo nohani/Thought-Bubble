@@ -7,10 +7,7 @@ import { createPost, fetchPosts } from '../../../../actions/post_actions'
 // })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  createPost: (post) => {
-    dispatch(createPost(post))
-    ownProps.history.push('/dashboard');
-  },
+  createPost: (post) => dispatch(createPost(post)),
   fetchPosts: () => dispatch(fetchPosts())
 })
 

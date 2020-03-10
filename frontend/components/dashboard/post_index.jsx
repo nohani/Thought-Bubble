@@ -11,7 +11,6 @@ export default class PostIndex extends React.Component{
   }
 
   render() {
-    console.log(this.props.posts);
     return (
       <div className="index-container">
         <ul>
@@ -19,8 +18,6 @@ export default class PostIndex extends React.Component{
               return <PostIndexItem
                   post={post}
                   key={post.id}
-                  deletePost={this.props.deletePost}
-                  editPost={this.props.editPost}
                   currentUser={this.props.currentUser}
                 />
           })}

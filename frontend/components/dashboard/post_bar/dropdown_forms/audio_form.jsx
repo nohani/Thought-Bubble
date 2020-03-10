@@ -42,11 +42,16 @@ export default class AudioForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('post[post_type]', this.state.post_type);
-    formData.append('post[audio]', this.state.link);
-
-    this.props.createMediaPost(formData);
+    // const formData = new FormData();
+    // formData.append('post[post_type]', this.state.post_type);
+    // formData.append('post[audio]', this.state.link);
+    // this.props.createMediaPost(formData);
+    const { link, post_type } = this.state
+    this.props.createPost({
+      link,
+      post_type
+    });
+    
     this.toggleStateBoolean();
   }
 

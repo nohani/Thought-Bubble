@@ -50,7 +50,6 @@ export default class TextForm extends React.Component {
 
 
   render() {
-    console.log(this.props);
     return (
       <div className={this.state.showDropdown ? "post-form-container expand-text" : "post-show-container"} >
         <div onClick={this.handleClick} className="post-bar-icons pbi-text">

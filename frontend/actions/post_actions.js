@@ -41,6 +41,9 @@ export const fetchPost = (postId) => (dispatch) => PostAPIUtils.fetchPost(postId
 export const editPost = (post) => (dispatch) => PostAPIUtils.editPost(post)
   .then((post) => dispatch(receivePost(post)), (errors) => dispatch(receiveErrors(errors.responseJSON)));
 
+export const editMediaPost = (post, postId) => (dispatch) => PostAPIUtils.editMediaPost(post, postId)
+  .then((post) => dispatch(receivePost(post)), (errors) => dispatch(receiveErrors(errors.responseJSON)));
+
 export const createPost = (post) => (dispatch) => PostAPIUtils.createPost(post)
   .then((post) => dispatch(receivePost(post)), (errors) => dispatch(receiveErrors(errors.responseJSON)));
 
