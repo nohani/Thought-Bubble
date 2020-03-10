@@ -317,6 +317,9 @@ a:hover, button:hover{
   font-weight: bold;
 }
 
+textarea{
+  white-space: pre-line;
+}
 
 ////////////TEXT-FORM//////////////
 
@@ -530,7 +533,6 @@ a:hover, button:hover{
 
 .post-form-chat #chat{
   width: 100%;
-
 }
 
 .post-form-chat #chat::placeholder{
@@ -715,6 +717,7 @@ i, span.post-bar-text {
   border-radius: 3px;
   padding: 20px;
   font-family: "Gibson", "Helvetica Neue", sans-serif;
+  white-space: pre-line;
 }
 
 .photo, .video {
@@ -740,6 +743,18 @@ i, span.post-bar-text {
 
 .video .pii-bottom{
   padding: 20px;
+}
+
+        //AUDIO-POST//
+
+.audio .audio-text{
+  font-family: 'Caveat', cursive;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.audio .audio-link{
+  padding: 0 0 0 20px;
 }
 
         //TEXT-POST//
@@ -779,6 +794,10 @@ i, span.post-bar-text {
         //VIDEO-POST//
 .video video {
   width: 100%;
+}
+
+.video video:focus {
+  outline: none;
 }
        //BOTTOM-ICONS//
 
@@ -882,11 +901,11 @@ i, span.post-bar-text {
 
 .text-edit #title::placeholder{
   color: #595959;
-  font-size: 2.5em;
+  font-size: 30px;
 }
 
 .text-edit #title{
-  font-size: 2.5em;
+  font-size: 30px;
 }
 
 .text-edit textarea{
@@ -902,18 +921,22 @@ i, span.post-bar-text {
   font-size: 2.5em;
 }
 
-.quote-edit #title::placeholder{
-  color: #595959;
-  font-size: 2.5em;
+.quote-edit #quote{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.quote-edit #quote::placeholder{
+  font-size: 3em;
+  font-family: "Times New Roman";
 }
 
 .quote-edit #source{
-  padding-bottom: 10px;
+  margin-bottom: 30px;
 }
 
-
-.quote-edit textarea{
-  width: 100%;
+.quote-edit #source::placeholder{
+  font-size: 0.8em;
 }
 
 ////////LINK/////////

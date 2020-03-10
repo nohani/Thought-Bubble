@@ -44,7 +44,6 @@ export default class PostIndexItem extends React.Component{
           <li key={post.id}>
             <div className={post.post_type}>
               <div className="username">{currentUser.username}</div>
-              {post.id}
               <div className="chat-title">{post.title}</div>
               <div className="chat-content">{post.content}</div>
               <div className="pii-bottom">
@@ -76,7 +75,8 @@ export default class PostIndexItem extends React.Component{
           <li key={post.id}>
             <div className={post.post_type}>
               <div className="username">{currentUser.username}</div>
-              <div className="audio-link">{post.link}</div>
+              <div className="audio-text">Listen to this:</div>
+              <div className="audio-link"><a href={`https://${post.link}`} target="_blank">{post.link}</a></div>
               <div className="pii-bottom">
                 <ul>
                   <li>{settingsIcon}</li>
@@ -90,7 +90,7 @@ export default class PostIndexItem extends React.Component{
           <li key={post.id}>
             <div className={post.post_type}>
               <div className="username">{currentUser.username}</div>
-              <video>
+              <video controls>
                 <source src={`${post.video_url}`} />
               </video>
               <div className="pii-bottom">
@@ -106,7 +106,7 @@ export default class PostIndexItem extends React.Component{
           <li key={post.id}>
             <div className={post.post_type}>
               <div className="username">{currentUser.username}</div>
-              <div className="link-link">{post.link}</div>
+              <div className="link-link"><a href={`https://${post.link}`} target="_blank">{post.link}</a></div>
               <div className="pii-bottom">
                 <ul>
                   <li>{settingsIcon}</li>
