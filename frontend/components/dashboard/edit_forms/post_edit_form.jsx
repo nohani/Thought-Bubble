@@ -25,12 +25,18 @@ export default class PostEditForm extends React.Component{
     this.handleAudioSubmit = this.handleAudioSubmit.bind(this);
   }
 
+
+  componentWillUnmount() {
+    this.props.clearPostErrors();
+  }
+
   update(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value });
     }
   }
 
+  
   renderTextEdit(){
     return(
       <form>

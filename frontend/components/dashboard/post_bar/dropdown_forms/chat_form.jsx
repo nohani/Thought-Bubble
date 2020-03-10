@@ -16,6 +16,10 @@ export default class ChatForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearPostErrors();
+  }
+
 
   handleClick(e) {
     e.preventDefault();

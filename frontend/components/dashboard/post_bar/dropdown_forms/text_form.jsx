@@ -16,6 +16,11 @@ export default class TextForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearPostErrors();
+  }
+
+
 
   handleClick(e) {
     e.preventDefault();

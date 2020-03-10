@@ -16,6 +16,11 @@ export default class LinkForm extends React.Component {
   }
 
 
+  componentWillUnmount() {
+    this.props.clearPostErrors();
+  }
+
+
   handleClick(e) {
     e.preventDefault();
     if (this.state.showDropdown === false) {

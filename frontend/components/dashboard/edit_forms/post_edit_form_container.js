@@ -5,7 +5,8 @@ import { editPost, fetchPosts } from '../../../actions/post_actions';
 const mapDispatchToProps = (dispatch) => ({
   editPost: (post) => dispatch(editPost(post)),
   fetchPosts: () => dispatch(fetchPosts()),
-  fetchPost: (postId) => dispatch(fetchPost(postId))
+  fetchPost: (postId) => dispatch(fetchPost(postId)),
+  clearPostErrors: () => dispatch(clearPostErrors())
 })
 
 export default connect(null, mapDispatchToProps)(PostEditForm);

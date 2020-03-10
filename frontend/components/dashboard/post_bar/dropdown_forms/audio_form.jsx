@@ -28,6 +28,12 @@ export default class AudioForm extends React.Component {
   //   this.setState({ link: e.currentTarget.files[0] });
   // }
 
+
+  componentWillUnmount() {
+    this.props.clearPostErrors();
+  }
+
+
   update(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value });

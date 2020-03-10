@@ -1,14 +1,14 @@
 import * as PostAPIUtils from '../utils/post_utils';
 
-export const RECEIVE_POSTS = "RECEIVE_POSTS";
+export const RECEIVE_POSTS_AND_USERS = "RECEIVE_POSTS_AND_USERS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 export const CLEAR_POST_ERRORS = 'CLEAR_SESSION_ERRORS';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 
-const receivePosts = (posts) => ({
-  type: RECEIVE_POSTS,
-  posts
+const receivePosts = (payload) => ({
+  type: RECEIVE_POSTS_AND_USERS,
+  payload
 })
 
 const receivePost = (post) => ({
@@ -33,7 +33,7 @@ export const clearPostErrors = () => ({
 //must come back to do errors 
 
 export const fetchPosts = () => (dispatch) => PostAPIUtils.fetchPosts()
-  .then((posts) => dispatch(receivePosts(posts)), (errors) => dispatch(receiveErrors(errors.responseJSON)));
+  .then((response) => dispatch(receivePosts(response)), (errors) => dispatch(receiveErrors(errors.responseJSON)));
 
 export const fetchPost = (postId) => (dispatch) => PostAPIUtils.fetchPost(postId)
   .then((post) => dispatch(receivePost(post)), (errors) => dispatch(receiveErrors(errors.responseJSON)));

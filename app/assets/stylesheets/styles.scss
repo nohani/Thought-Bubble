@@ -1045,3 +1045,14 @@ i, span.post-bar-text {
 .photo-edit #file:active {
   outline: 0;
 }
+
+////////POSTS ERRORS////////// 
+
+.post-errors{
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  padding: 20px;
+  font-family: "Gibson", "Helvetica Neue", sans-serif;
+  white-space: pre-line;
+}

@@ -19,7 +19,8 @@ export default class PostIndexItem extends React.Component{
   }
   
   renderPost(){
-    const { post, currentUser } = this.props;
+    const { post, currentUser, user } = this.props;
+      console.log(user);
     const settingsIcon = currentUser.id === post.author_id ?
       <SettingsDropdownContainer editModeBoolean={this.editModeBoolean} post={post} /> : null
 
@@ -28,7 +29,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{currentUser.username}</div>
+              <div className="username">{user.username}</div>
               <div className="text-title">{post.title}</div>
               <div className="text-content">{post.content}</div>
               <div className="pii-bottom">
@@ -43,7 +44,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{currentUser.username}</div>
+              <div className="username">{ user.username }</div>
               <div className="chat-title">{post.title}</div>
               <div className="chat-content">{post.content}</div>
               <div className="pii-bottom">
@@ -58,7 +59,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{currentUser.username}</div>
+              <div className="username">{user.username}</div>
               <div className="quote-quote">"{post.quote}"</div>
               <span>-</span>
               <div className="quote-source">{post.source}</div>
@@ -74,7 +75,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{currentUser.username}</div>
+              <div className="username">{user.username}</div>
               <div className="audio-text">Listen to this:</div>
               <div className="audio-link"><a href={`https://${post.link}`} target="_blank">{post.link}</a></div>
               <div className="pii-bottom">
@@ -89,7 +90,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{currentUser.username}</div>
+              <div className="username">{user.username}</div>
               <video controls>
                 <source src={`${post.video_url}`} />
               </video>
@@ -105,7 +106,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{currentUser.username}</div>
+              <div className="username">{user.username}</div>
               <div className="link-link"><a href={`https://${post.link}`} target="_blank">{post.link}</a></div>
               <div className="pii-bottom">
                 <ul>
@@ -119,7 +120,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{currentUser.username}</div>
+              <div className="username">{user.username}</div>
               <img src={post.image_url} />
               <div className="pii-bottom">
                 <ul>
@@ -132,7 +133,7 @@ export default class PostIndexItem extends React.Component{
       default:
         return (
           <li key={post.id}>
-            <div className="username">{currentUser.username}</div>
+            <div className="username">{user.username}</div>
             <div className="pii-bottom">
               <ul>
                 <li>{settingsIcon}</li>
@@ -166,6 +167,7 @@ export default class PostIndexItem extends React.Component{
           )
     }
   }
+
   render() {
 
       if (this.state.editMode === true){

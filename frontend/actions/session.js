@@ -39,5 +39,5 @@ export const logout = () => dispatch => deleteSession()
   .then(() => dispatch(logoutCurrentUser()), (errors) => dispatch(receiveErrors(errors.responseJSON)))
 
 export const fetchAllUsers = () => (dispatch) => fetchUsers()
-  .then((users) => dispatch(receiveUsers(users)));
+  .then((users) => dispatch(receiveUsers(users), (errors) => dispatch(receiveErrors(errors.responseJSON))))
 

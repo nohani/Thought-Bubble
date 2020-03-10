@@ -18,6 +18,11 @@ export default class PostMediaEditForm extends React.Component {
     this.handleVideoFile = this.handleVideoFile.bind(this);
   }
 
+
+  componentWillUnmount() {
+    this.props.clearPostErrors();
+  }
+
 /////////////////////////////
 
   handlePhotoFile(e) {

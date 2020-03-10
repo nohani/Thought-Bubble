@@ -5,7 +5,8 @@ import { editMediaPost, fetchPosts } from '../../../actions/post_actions';
 const mapDispatchToProps = (dispatch, ownProps) => ({
   editMediaPost: (post) => dispatch(editMediaPost(post, ownProps.post.id)),
   fetchPosts: () => dispatch(fetchPosts()),
-  fetchPost: (postId) => dispatch(fetchPost(postId))
+  fetchPost: (postId) => dispatch(fetchPost(postId)),
+  clearPostErrors: () => dispatch(clearPostErrors())
 })
 
 export default connect(null, mapDispatchToProps)(PostMediaEditForm);

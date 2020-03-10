@@ -16,6 +16,9 @@ export default class PhotoForm extends React.Component {
     this.handleFile = this.handleFile.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearPostErrors();
+  }
 
   handleClick(e) {
     e.preventDefault();
