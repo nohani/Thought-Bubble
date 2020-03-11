@@ -17,6 +17,7 @@ class Signup extends React.Component{
   componentWillUnmount(){
     this.props.clearErrors();
   }
+  
   handleInput(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value })

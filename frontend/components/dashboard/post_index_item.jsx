@@ -20,7 +20,6 @@ export default class PostIndexItem extends React.Component{
   
   renderPost(){
     const { post, currentUser, user } = this.props;
-      console.log(user);
     const settingsIcon = currentUser.id === post.author_id ?
       <SettingsDropdownContainer editModeBoolean={this.editModeBoolean} post={post} /> : null
 

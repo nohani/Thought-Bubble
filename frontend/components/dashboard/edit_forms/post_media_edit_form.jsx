@@ -19,9 +19,9 @@ export default class PostMediaEditForm extends React.Component {
   }
 
 
-  componentWillUnmount() {
-    this.props.clearPostErrors();
-  }
+  // componentWillUnmount() {
+  //   this.props.clearPostErrors();
+  // }
 
 /////////////////////////////
 

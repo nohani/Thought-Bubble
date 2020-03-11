@@ -29,9 +29,9 @@ export default class AudioForm extends React.Component {
   // }
 
 
-  componentWillUnmount() {
-    this.props.clearPostErrors();
-  }
+  // componentWillUnmount() {
+  //   this.props.clearPostErrors();
+  // }
 
 
   update(field) {

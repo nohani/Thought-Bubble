@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   # validates :content, :quote, presence: true, length: { minimum: 1}, if: :has_this_type?
 
   belongs_to :author, class_name: "User"
+  has_many :likes
 
   has_one_attached :photo
   has_one_attached :video

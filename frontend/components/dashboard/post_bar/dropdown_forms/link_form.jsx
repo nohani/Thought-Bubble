@@ -16,9 +16,9 @@ export default class LinkForm extends React.Component {
   }
 
 
-  componentWillUnmount() {
-    this.props.clearPostErrors();
-  }
+  // componentWillUnmount() {
+  //   this.props.clearPostErrors();
+  // }
 
 
   handleClick(e) {

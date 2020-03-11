@@ -12,19 +12,29 @@ export default class SettingsDropdown extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.toggleStateBoolean = this.toggleStateBoolean.bind(this);
+    // this.documentClick = this.documentClick.bind(this);
   }
+
+  // documentClick(e){
+  //   const documentClick = function (e){
+  //    if (!this.ref.current.contains(e.target)) {
+  //       this.setState({ showDropdown: false });
+  //      document.removeEventListener("click", documentClick);
+  //     }
+  //   }
+  // }
 
   handleClick(e) {
     if (this.state.showDropdown === false) {
       this.setState({ showDropdown: true });
 
-      const documentClick = (e) => {
+      const documentClick = function (e){
         if (!this.ref.current.contains(e.target)) {
           this.setState({ showDropdown: false });
           document.removeEventListener("click", documentClick);
         }
       }
-      document.addEventListener("click", documentClick);
+      document.addEventListener("click", this.documentClick);
     }
   }
 

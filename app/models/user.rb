@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   has_many :authored_posts, class_name: "Post", foreign_key: :author_id
+  has_many :likes
 
   #FeGrip
   attr_reader :password
