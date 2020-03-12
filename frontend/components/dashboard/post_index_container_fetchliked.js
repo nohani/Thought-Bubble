@@ -4,11 +4,11 @@ import { fetchAllUsers } from '../../actions/session';
 import { fetchLikedPosts } from '../../actions/post_actions';
 import { Link, Route, withRouter } from 'react-router-dom'
 import PostIndex from './post_index';
-import postsSelector from '../../selectors/selector_posts';
+import likedPostsSelector from '../../selectors/selector_liked_posts';
 
 const mapStateToProps = (state) => {
   return {
-    posts: postsSelector(state.entities.posts),
+    posts: likedPostsSelector(state.entities.posts, state.entities.users, state.session.currentUser),
     users: state.entities.users,
     currentUser: state.session.currentUser,
     errors: state.errors.posts,

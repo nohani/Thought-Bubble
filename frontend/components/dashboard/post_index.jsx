@@ -33,7 +33,8 @@ export default class PostIndex extends React.Component{
       <div className="index-container">
         <ul>
           {/* <li> {this.renderPostErrors()} </li> */}
-          { this.props.posts.map(post => {
+          {this.props.posts.map(post => {
+            console.log(post);
               return <PostIndexItemContainer
                   user={this.props.users[post.author_id]}
                   post={post}
