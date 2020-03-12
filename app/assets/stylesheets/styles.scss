@@ -166,6 +166,25 @@ label {
   font-family: "Helvetica Neue";
 }
 
+.dropdown-list-item{
+  padding: 10px 20px 10px 10px;
+  font-size: 14px;
+  color: #444444;
+}
+
+.dropdown-list-item:hover {
+  padding: 10px 20px 10px 10px;
+  font-size: 14px;
+  color: #444444;
+  background-color: rgba(173,216,230, 0.4);
+}
+
+.dropdown-list-item .heart{
+  padding: 0 20px 0 10px;
+  font-size: 20px;
+  color: #444444;
+}
+
 .dropdown-header{
   display:flex;
   justify-content: space-between;
@@ -180,6 +199,8 @@ label {
   font-weight: bold;
   font-size: 0.8em;
 }
+
+//////////////////////////
 
 .dashboard-header {
   padding-bottom: 10px;
@@ -804,7 +825,8 @@ i, span.post-bar-text {
 .pii-bottom{
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 15px;
+  vertical-align: baseline;
 }
 
 .pii-bottom ul{
@@ -819,10 +841,21 @@ i, span.post-bar-text {
   color: gray;
 }
 
+.full-heart{
+  color: #ff5e48;
+}
+
 .post-index-icons:hover {
-  color: gray;
   cursor:pointer;
 }
+
+.num-likes {
+  font-size: 13px;
+  color: rgba(0, 0, 0, .63);
+  font-weight: bold;
+}
+
+///////
 
 .settings-dd {
   display: none;
@@ -1055,4 +1088,11 @@ i, span.post-bar-text {
   padding: 20px;
   font-family: "Gibson", "Helvetica Neue", sans-serif;
   white-space: pre-line;
+}
+
+
+////////LIKES PAGE//////// 
+
+.bottom-likes-pg{
+  margin-top: 120px;
 }

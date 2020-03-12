@@ -1,25 +1,26 @@
 import React from 'react';
 import DashboardBarContainer from './dashboard_bar_container';
 import PostBar from './post_bar/post_bar';
-import PostIndexContainer from './post_index_container'
+import PostIndexContainerFetchAll from './post_index_container_fetchall';
+import PostIndexContainerFetchLiked from './post_index_container_fetchliked';
+import { Link, Route } from 'react-router-dom'
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  // componentDidMount() {
-  //   // will fetch all blog posts!!
-  // }
-
   render() {
     return (
       <div className="dashboard-fullscreen">
         <DashboardBarContainer />
-        <PostBar />
-        <div className="bottom">
-          <PostIndexContainer />
-        </div>
+
+        <Route path="/dashboard" render={() => (<PostBar />)} />
+
+        <Route path="/dashboard" render={() => (<div className="bottom"> <PostIndexContainerFetchAll /> </div>)} />
+        <Route path="/likes" render={() => (<div className="bottom-likes-pg"> <PostIndexContainerFetchLiked /> </div>)} />
+        
+
       </div>
     )
   }

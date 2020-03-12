@@ -1,5 +1,6 @@
 import React from 'react';
-import PostIndexItem from './post_index_item';
+import PostIndexItemContainer from './post_index_item_container';
+import { Link, Route, withRouter } from 'react-router-dom'; 
 import { render } from 'react-dom';
 
 export default class PostIndex extends React.Component{
@@ -8,7 +9,9 @@ export default class PostIndex extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchPosts();
+    
+    this.props.fetchPosts()
+
   }
 
   // componentWillUnmount(){
@@ -26,16 +29,16 @@ export default class PostIndex extends React.Component{
   // }
 
   render() {
+    console.log(this.props);
     return (
       <div className="index-container">
         <ul>
           {/* <li> {this.renderPostErrors()} </li> */}
           { this.props.posts.map(post => {
-              return <PostIndexItem
+              return <PostIndexItemContainer
                   user={this.props.users[post.author_id]}
                   post={post}
                   key={post.id}
-                  currentUser={this.props.currentUser}
                 />
           })}
         </ul>

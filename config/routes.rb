@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :update, :show, :destroy, :create] do
       post '/likes', :to => 'likes#create'
       delete '/likes', :to => 'likes#destroy'
+      collection do 
+        resources :likes, only: [:index]
+      end
     end 
     resource :session, only: [:create, :destroy]
     

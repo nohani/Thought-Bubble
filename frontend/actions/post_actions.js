@@ -6,12 +6,12 @@ export const REMOVE_POST = "REMOVE_POST";
 export const CLEAR_POST_ERRORS = 'CLEAR_SESSION_ERRORS';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 
-const receivePosts = (payload) => ({
+export const receivePosts = (payload) => ({
   type: RECEIVE_POSTS_AND_USERS,
   payload
 })
 
-const receivePost = (post) => ({
+export const receivePost = (post) => ({
   type: RECEIVE_POST,
   post
 })
@@ -34,6 +34,9 @@ export const clearPostErrors = () => ({
 
 export const fetchPosts = () => (dispatch) => PostAPIUtils.fetchPosts()
   .then((response) => dispatch(receivePosts(response)), (errors) => dispatch(receiveErrors(errors.responseJSON)));
+
+export const fetchLikedPosts = () => (dispatch) => PostAPIUtils.fetchLikedPosts()
+  .then((response) => dispatch(receivePosts(response)), (errors) => dispatch(receiveErrors(errors.responseJSON)));  
 
 export const fetchPost = (postId) => (dispatch) => PostAPIUtils.fetchPost(postId)
   .then((post) => dispatch(receivePost(post)), (errors) => dispatch(receiveErrors(errors.responseJSON)));

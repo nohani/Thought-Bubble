@@ -54,3 +54,10 @@ export const createMediaPost = (formData) => {
     processData: false
   })
 }
+
+export const fetchLikedPosts = () => {
+  return $.ajax({
+    url: 'api/posts/likes',
+    method: 'GET'
+  })
+}

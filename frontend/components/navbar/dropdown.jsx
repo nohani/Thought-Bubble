@@ -43,6 +43,7 @@ export default class Dropdown extends React.Component{
           <div id="myDropdown" className="dropdown-content">
             <ul>
               <li className="dropdown-header"><strong>ACCOUNT</strong> <Link to="/signup" onClick={this.props.logout}>Logout</Link></li>
+              <Link to="/likes"><li className="dropdown-list-item"><span className="heart"><i class="fas fa-heart"></i></span> Likes</li></Link>
             </ul>
           </div>
         </div>

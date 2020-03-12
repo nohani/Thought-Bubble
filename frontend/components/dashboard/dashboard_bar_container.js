@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DashboardBar from './dashboard_bar';
 import { logout } from '../../actions/session';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
 })
 
