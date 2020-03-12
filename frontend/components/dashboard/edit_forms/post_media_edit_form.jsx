@@ -88,7 +88,6 @@ export default class PostMediaEditForm extends React.Component {
 ////////////////////////////
 
   render() {
-    console.log(this.props);
     switch (this.props.post.post_type) {
       case "photo":
         return this.renderPhotoEdit();

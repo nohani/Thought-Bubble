@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   # validates :content, :quote, presence: true, length: { minimum: 1}, if: :has_this_type?
 
   belongs_to :author, class_name: "User"
-  has_many :likes
+  has_many :likes, class_name: "Like", foreign_key: :post_id
   has_many :likers,
     through: :likes,
     source: :liker

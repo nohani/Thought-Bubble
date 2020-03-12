@@ -3,11 +3,10 @@ import { fetchPosts, editPost, deletePost, clearPostErrors } from '../../actions
 import { fetchAllUsers } from '../../actions/session';
 import { Link, Route, withRouter } from 'react-router-dom'
 import PostIndex from './post_index';
-import selectorPosts from '../../selectors/selector_posts';
 
 const mapStateToProps = (state) => {
   return {
-    posts: selectorPosts(state.entities.posts),
+    posts: Object.values(state.entities.posts),
     users: state.entities.users,
     currentUser: state.session.currentUser,
     errors: state.errors.posts,
