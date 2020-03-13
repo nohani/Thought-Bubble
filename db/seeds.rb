@@ -9,6 +9,11 @@
 require 'faker'
 require 'open-uri'
 
+User.destroy_all
+Post.destroy_all
+Like.destroy_all
+Follow.destroy_all
+
 demo_user = User.create!(email: "guest@guest.com", password: "hunter2", username: "Guest")
 user1 = User.create!(email: "example1@example.com", password: "hunter2", username: "AlwaysNerdyPersona")
 user2 = User.create!(email: "example2@example.com", password: "hunter2", username: "FriedFritters")
