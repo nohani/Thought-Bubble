@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Thought Bubble](https://thought-bubble-rails.herokuapp.com/#/)
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+Thought-Bubble is a place for someone to express themselves through varying forms of media while connecting with others.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Built With
+ * React
+ * Redux
+ * Ruby on Rails
+ * Postgresql
+ 
+ ## Features
+ 
+ ### Account Creation 
+  * Users can sign in with unique e-mails & usernames
+  
+ ### Posts
+  * Users can create, delete, edit and view their posts
+  * Users can only view others' posts 
+  
+ ### Likes
+  * Users can like/unlike posts
+  
+ ### Follows
+  * Users can follow/unfollow posts
