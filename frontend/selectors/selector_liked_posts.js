@@ -1,5 +1,6 @@
 export default (posts = {}, users = {}, currentUser = {}) => {
 
+  
   const cUser = users[currentUser.id];
 
   const likedPostIds = cUser.liked_post_ids
@@ -10,7 +11,9 @@ export default (posts = {}, users = {}, currentUser = {}) => {
     // const max = Math.max(...likedPostIds);
 
       for(let i = 0; i < likedPostIds.length; i++){
+        if(posts[likedPostIds[i]]){
           likedPosts.push(posts[likedPostIds[i]])
+        }
       }
   }
 

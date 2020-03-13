@@ -9,6 +9,6 @@ end
 
 json.users do
     json.set! current_user.id do
-      json.extract! current_user, :id, :username, :authored_post_ids, :liked_post_ids
+         json.partial! 'api/users/user', user: current_user
     end
 end

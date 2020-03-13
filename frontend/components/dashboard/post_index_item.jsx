@@ -12,10 +12,22 @@ export default class PostIndexItem extends React.Component{
     }
 
     this.editModeBoolean = this.editModeBoolean.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   editModeBoolean(boolean){
     this.setState({editMode: boolean})
+  }
+
+  handleFollow(e, authorId){
+    e.preventDefault();
+    this.props.createFollow(authorId);
+  }
+
+  handleUnfollow(e, authorId){
+    e.preventDefault();
+    this.props.deleteFollow(authorId);
   }
   
   renderPost(){
@@ -36,13 +48,18 @@ export default class PostIndexItem extends React.Component{
       numLikes = null
     }
 
+    const cUser = this.props.users[currentUser.id];
+    const followButton = cUser.followed_user_ids.includes(post.author_id) ? (
+      <button className="follow-button" onClick={(e) => this.handleUnfollow(e, post.author_id)}>Unfollow</button>
+    ) : (<button className="follow-button" onClick={(e) => this.handleFollow(e, post.author_id)}>Follow</button>)
+
     // const numLikes = post.num_likes > 0 ?  `${post.num_likes} likes` : null
     switch (post.post_type) {
       case "text":
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{user.username}</div>
+              <div className="username">{user.username}{followButton}</div>
               <div className="text-title">{post.title}</div>
               <div className="text-content">{post.content}</div>
               <div className="pii-bottom">
@@ -61,7 +78,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{ user.username }</div>
+              <div className="username">{user.username}{followButton}</div>
               <div className="chat-title">{post.title}</div>
               <div className="chat-content">{post.content}</div>
               <div className="pii-bottom">
@@ -80,7 +97,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{user.username}</div>
+              <div className="username">{user.username}{followButton}</div>
               <div className="quote-quote">"{post.quote}"</div>
               <span>-</span>
               <div className="quote-source">{post.source}</div>
@@ -100,7 +117,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{user.username}</div>
+              <div className="username">{user.username}{followButton}</div>
               <div className="audio-text">Listen to this:</div>
               <div className="audio-link"><a href={`https://${post.link}`} target="_blank">{post.link}</a></div>
               <div className="pii-bottom">
@@ -119,7 +136,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{user.username}</div>
+              <div className="username">{user.username}{followButton}</div>
               <video controls>
                 <source src={`${post.video_url}`} />
               </video>
@@ -139,7 +156,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{user.username}</div>
+              <div className="username">{user.username}{followButton}</div>
               <div className="link-link"><a href={`https://${post.link}`} target="_blank">{post.link}</a></div>
               <div className="pii-bottom">
                 <div className="num-likes">
@@ -157,7 +174,7 @@ export default class PostIndexItem extends React.Component{
         return (
           <li key={post.id}>
             <div className={post.post_type}>
-              <div className="username">{user.username}</div>
+              <div className="username">{user.username}{followButton}</div>
               <img src={post.image_url} />
               <div className="pii-bottom">
                 <div className="num-likes">
@@ -174,7 +191,7 @@ export default class PostIndexItem extends React.Component{
       default:
         return (
           <li key={post.id}>
-            <div className="username">{user.username}</div>
+            <div className="username">{user.username}{followButton}</div>
             <div className="pii-bottom">
               <div className="num-likes">
                 {numLikes}
