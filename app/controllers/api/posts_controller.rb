@@ -1,8 +1,16 @@
 class Api::PostsController < ApplicationController
 
     def index
-      @posts = current_user.authored_posts
+      @posts = Post.all
+      # @users = current_user.followed_users
+      # @posts = []
+      # @users.each do |user|
+      #   @followed_posts.concat(user.authored_posts)
+      # end
+
+      # @posts
     end
+
 
     def show
       @post = current_user.authored_posts.find_by(id: params[:id])

@@ -5,18 +5,12 @@ export default class SuggestedUserItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleFollow = this.handleFollow.bind(this);
-    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   handleFollow(e, userId) {
     e.preventDefault();
     this.props.createFollow(userId);
-  }
-
-  handleUnfollow(e, userId) {
-    e.preventDefault();
-    this.props.deleteFollow(userId);
-  }
+  } 
 
   render() {
     const {users, currentUser, user} = this.props;

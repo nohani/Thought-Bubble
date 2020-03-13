@@ -10,10 +10,10 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :post
   
   has_many :following, class_name: "Follow", foreign_key: :follower_id 
-  has_many :followed_users, through: :following, source: :follower
+  has_many :followed_users, through: :following, source: :followee
 
   has_many :followees, class_name: "Follow", foreign_key: :followee_id
-  has_many :followed_by_users, through: :followees, source: :followee
+  has_many :followed_by_users, through: :followees, source: :follower
 
   #FeGrip
   attr_reader :password
