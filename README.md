@@ -25,4 +25,4 @@ Thought-Bubble is a place for someone to express themselves through varying form
   * Users can like/unlike posts
   
  ### Follows
-  * Users can follow/unfollow posts
+  * Users can follow/unfollow other users
