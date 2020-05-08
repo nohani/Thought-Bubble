@@ -10,14 +10,16 @@ export default class SuggestedUserItem extends React.Component {
   handleFollow(e, userId) {
     e.preventDefault();
     this.props.createFollow(userId);
+    this.props.fetchUnfollowedUsers();
+    this.props.fetchPosts();
   } 
 
   render() {
     const {users, currentUser, user} = this.props;
-    // const cUser = users[currentUser.id];
+    const cUser = users[currentUser.id];
     if (!user) return null;
 
-      const followButton = currentUser.followed_user_ids.includes(user.id) ? (
+      const followButton = cUser.followed_user_ids.includes(user.id) ? (
         <div className="null-plus-icon"><i className="fas fa-plus-square"></i></div>
       ) : (<button className="follow-button" onClick={(e) => this.handleFollow(e, user.id)}><div className="plus-icon"><i className="fas fa-plus-square"></i></div></button>)
 

@@ -12,8 +12,7 @@ export default class SuggestedUsers extends React.Component {
 
   render() {
     
-    const { deleteFollow, createFollow, selectedUsers, users, currentUser } = this.props;
-    console.log(selectedUsers)
+    const { deleteFollow, createFollow, selectedUsers, users, currentUser, fetchPosts, fetchUnfollowedUsers } = this.props;
     return (
       <>
       <h2>Recommended Users:</h2>
@@ -25,6 +24,8 @@ export default class SuggestedUsers extends React.Component {
             user={user}
             users={users}
             currentUser={currentUser}
+            fetchUnfollowedUsers={fetchUnfollowedUsers}
+            fetchPosts={fetchPosts}
             key={i}
             />
         })}

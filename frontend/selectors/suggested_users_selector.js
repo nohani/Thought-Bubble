@@ -1,7 +1,7 @@
 export default (users) => {
 
+  if (users.length < 1) return;
   let usersArray = Object.values(users);
-    
     
   const suggestedUsers = [];
       
@@ -10,7 +10,6 @@ export default (users) => {
     let index = Math.floor(Math.random() * usersArray.length);
     suggestedUsers.push(usersArray[index]);
     usersArray.splice(index, 1)
-    console.log(usersArray)
   }
 
   return suggestedUsers;
