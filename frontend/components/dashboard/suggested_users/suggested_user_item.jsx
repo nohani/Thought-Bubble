@@ -6,7 +6,7 @@ export default class SuggestedUserItem extends React.Component {
     super(props);
     this.handleFollow = this.handleFollow.bind(this);
   }
-
+  
   handleFollow(e, userId) {
     e.preventDefault();
     this.props.createFollow(userId);
@@ -14,11 +14,12 @@ export default class SuggestedUserItem extends React.Component {
 
   render() {
     const {users, currentUser, user} = this.props;
-    
-    const cUser = users[currentUser.id];
-    const followButton = cUser.followed_user_ids.includes(user.id) ? (
-      <div className="null-plus-icon"><i className="fas fa-plus-square"></i></div>
-    ) : (<button className="follow-button" onClick={(e) => this.handleFollow(e, user.id)}><div className="plus-icon"><i className="fas fa-plus-square"></i></div></button>)
+    // const cUser = users[currentUser.id];
+    if (!user) return null;
+
+      const followButton = currentUser.followed_user_ids.includes(user.id) ? (
+        <div className="null-plus-icon"><i className="fas fa-plus-square"></i></div>
+      ) : (<button className="follow-button" onClick={(e) => this.handleFollow(e, user.id)}><div className="plus-icon"><i className="fas fa-plus-square"></i></div></button>)
 
     return (
       <li className="suggested-user">

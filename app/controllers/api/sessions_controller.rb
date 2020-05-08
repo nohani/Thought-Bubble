@@ -8,7 +8,7 @@ def create
 
   if @user
     login(@user)
-    render :show
+    render 'api/users/show'
   else
     render json: ["Invalid username and password combination"], status: 404
   end

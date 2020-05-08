@@ -1,14 +1,14 @@
 class Api::PostsController < ApplicationController
 
     def index
-      @posts = Post.all
-      # @users = current_user.followed_users
-      # @posts = []
-      # @users.each do |user|
-      #   @followed_posts.concat(user.authored_posts)
-      # end
+      # @posts = Post.all
+      @users = current_user.followed_users
+      @posts = []
+      @users.each do |user|
+        @posts.concat(user.authored_posts)
+      end
 
-      # @posts
+      @posts
     end
 
 

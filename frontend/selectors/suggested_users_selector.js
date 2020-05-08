@@ -1,19 +1,18 @@
 export default (users) => {
 
-  const usersArray = Object.values(users);
-
-  const suggestedUsers = [];
-  const indices = [];
-
-  for (let i=0; i < 3;){
+  let usersArray = Object.values(users);
     
-    let index = Math.floor(Math.random() * usersArray.length);
+    
+  const suggestedUsers = [];
+      
+  while (usersArray.length && suggestedUsers.length < 3) {
 
-    if(!indices.includes(index)){
-      suggestedUsers.push(usersArray[index]);
-      i++;
-    }
+    let index = Math.floor(Math.random() * usersArray.length);
+    suggestedUsers.push(usersArray[index]);
+    usersArray.splice(index, 1)
+    console.log(usersArray)
   }
 
   return suggestedUsers;
 }
+
