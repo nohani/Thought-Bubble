@@ -10,7 +10,7 @@ export default ({ currentUser, logout }) => {
       <div className="single-letter"><Link to="/dashboard">t</Link></div>
       <ul>
         <li><Dropdown logout={logout} /></li>
-        <li><div className="menu-icons"><i className="fas fa-home"></i></div></li>
+        <li><Link to="/dashboard"><div className="menu-icons"><i className="fas fa-home"></i></div></Link></li>
       </ul>
     </div>
   ) : (

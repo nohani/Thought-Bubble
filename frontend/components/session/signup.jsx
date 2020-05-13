@@ -17,6 +17,7 @@ class Signup extends React.Component{
   componentWillUnmount(){
     this.props.clearErrors();
   }
+  
   handleInput(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value })
@@ -31,7 +32,7 @@ class Signup extends React.Component{
 
   renderErrors() {
     return (
-      <ul class="session-errors">
+      <ul className="session-errors">
         {this.props.errors.map((error, i) => {
           return <li key={i}>{error}</li>
         })}
