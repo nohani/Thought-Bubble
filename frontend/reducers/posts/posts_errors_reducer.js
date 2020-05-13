@@ -7,8 +7,8 @@ import { RECEIVE_POST_ERRORS,
 export default (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_POST_ERRORS:
-      return action.errors;
+    // case RECEIVE_POST_ERRORS:
+    //   return action.errors;
     case RECEIVE_POST:
     case REMOVE_POST:
     case RECEIVE_POSTS_AND_USERS:

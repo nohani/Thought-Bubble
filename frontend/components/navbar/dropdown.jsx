@@ -10,36 +10,53 @@ export default class Dropdown extends React.Component{
     }
 
     this.ref = React.createRef();
-    this.handleClick = this.handleClick.bind(this);
+    this.showMenu = this.showMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
+    // this.documentClick = this.documentClick.bind(this);
   }
 
-
-  handleClick(e) {
-    // const dropdown = document.getElementsByClassName("dropdown");
-    // if (this.ref.current.contains(e.target)){
-    //   dropdown[0].classList.toggle("show");
-    // } else {
-    //   this.handleClickOutside();
-    // }
-    if (this.state.showDropdown === false) {
-      this.setState({showDropdown: true});
+  // handleClick(e) {
+  //   e.preventDefault();
+  //   if (this.state.showDropdown === false) {
+  //     this.setState({showDropdown: true});
   
-      const documentClick = (e) => {
-        if (!this.ref.current.contains(e.target)){
-          this.setState({showDropdown: false});
-          document.removeEventListener("click", documentClick);
-        }
-      }
-      document.addEventListener("click", documentClick);
-    }
+  //     const documentClick = (e) => {
+  //       if (!this.ref.current.contains(e.target)){
+  //         this.setState({showDropdown: false});
+  //         document.removeEventListener("click", documentClick);
+  //       }
+  //     }
+  //     document.addEventListener("click", this.documentClick(e));
+  //   }
+  // }
+
+  showMenu(event) {
+    event.preventDefault();
+
+    this.setState({ showDropdown: true }, () => {
+      document.addEventListener('click', this.closeMenu);
+    });
   }
 
+  closeMenu(event) {
+    if (!this.dropdownMenu) {
+      document.removeEventListener('click', this.closeMenu)
+    } else if (!this.dropdownMenu.contains(event.target)) {
+      this.setState({ showDropdown: false }, () => {
+        document.removeEventListener('click', this.closeMenu);
+      });
+    } 
+  }
+
+  // componentWillUnmount(){
+  //   document.removeEventListener("click", this.documentClick(e));
+  // }
 
   render() {
     return (
       <div className="dropdown-container" >
-        <div onClick={this.handleClick} className="menu-icons"><i className="fas fa-user"></i></div>
-        <div className={this.state.showDropdown ? "dropdown show" : "dropdown"} ref={this.ref}>
+        <div onClick={this.showMenu} className="menu-icons"><i className="fas fa-user"></i></div>
+        <div className={this.state.showDropdown ? "dropdown show" : "dropdown"} ref={element => this.dropdownMenu = element}>
           <div id="myDropdown" className="dropdown-content">
             <ul>
               <li className="dropdown-header"><strong>ACCOUNT</strong> <Link to="/signup" onClick={this.props.logout}>Logout</Link></li>
