@@ -1,6 +1,6 @@
 export default (users) => {
 
-  if (users.length < 1) return;
+  if (users === undefined) return [];
   let usersArray = Object.values(users);
     
   const suggestedUsers = [];

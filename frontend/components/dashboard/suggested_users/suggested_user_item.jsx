@@ -10,8 +10,8 @@ export default class SuggestedUserItem extends React.Component {
   handleFollow(e, userId) {
     e.preventDefault();
     this.props.createFollow(userId);
-    this.props.fetchUnfollowedUsers();
     this.props.fetchPosts();
+    this.props.fetchUnfollowedUsers();
   } 
 
   render() {
