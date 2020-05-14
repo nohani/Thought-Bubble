@@ -12,6 +12,7 @@ export const deleteFollow = (userId) => {
   })
 }
 
+<<<<<<< HEAD
 export const fetchUnfollowedUsers = () => {
   return $.ajax({
     url: 'api/users/follows',
@@ -19,3 +20,5 @@ export const fetchUnfollowedUsers = () => {
   })
 }
 
+=======
+>>>>>>> f55d524dd73b1f5fc03b2d639537fd3698a66b79

@@ -9,11 +9,17 @@ export default class SettingsDropdown extends React.Component {
     }
 
     this.ref = React.createRef();
+<<<<<<< HEAD
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     // this.handleClick = this.handleClick.bind(this);
     // this.toggleStateBoolean = this.toggleStateBoolean.bind(this);
+=======
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.toggleStateBoolean = this.toggleStateBoolean.bind(this);
+>>>>>>> f55d524dd73b1f5fc03b2d639537fd3698a66b79
     // this.documentClick = this.documentClick.bind(this);
   }
 
@@ -26,6 +32,7 @@ export default class SettingsDropdown extends React.Component {
   //   }
   // }
 
+<<<<<<< HEAD
   // handleClick(e) {
   //   if (this.state.showDropdown === false) {
   //     this.setState({ showDropdown: true });
@@ -64,6 +71,28 @@ export default class SettingsDropdown extends React.Component {
   //   }
   // }
 
+=======
+  handleClick(e) {
+    if (this.state.showDropdown === false) {
+      this.setState({ showDropdown: true });
+
+      const documentClick = function (e){
+        if (!this.ref.current.contains(e.target)) {
+          this.setState({ showDropdown: false });
+          document.removeEventListener("click", documentClick);
+        }
+      }
+      document.addEventListener("click", this.documentClick);
+    }
+  }
+
+  toggleStateBoolean() {
+    if (this.state.showDropdown === true) {
+      this.setState({ showDropdown: false });
+    }
+  }
+
+>>>>>>> f55d524dd73b1f5fc03b2d639537fd3698a66b79
   handleDelete(e) {
     e.preventDefault();
     this.props.deletePost(this.props.post.id);
@@ -73,10 +102,17 @@ export default class SettingsDropdown extends React.Component {
   render() { 
     return (
       <div className="settings-dd-container" >
+<<<<<<< HEAD
         <div onClick={this.showMenu} className="post-index-icons">
           <i className="fas fa-cog"></i>
         </div>
         <div className={this.state.showDropdown ? "settings-dd show" : "settings-dd"} ref={element => {this.dropdownMenu = element}}>
+=======
+        <div onClick={this.handleClick} className="post-index-icons">
+          <i className="fas fa-cog"></i>
+        </div>
+        <div className={this.state.showDropdown ? "settings-dd show" : "settings-dd"} ref={this.ref}>
+>>>>>>> f55d524dd73b1f5fc03b2d639537fd3698a66b79
             <div className="sd-item" onClick={() => this.props.editModeBoolean(true)}>Edit</div>
           <form>
             <div className="sd-item" onClick={this.handleDelete}>Delete</div>
