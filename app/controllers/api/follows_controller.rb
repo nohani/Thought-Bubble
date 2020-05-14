@@ -7,7 +7,6 @@ class Api::FollowsController < ApplicationController
   #   render 'api/users/follows'
   # end
 
-<<<<<<< HEAD
   def index
     @followed_users = current_user.followed_user_ids
     @users = User.all
@@ -21,8 +20,6 @@ class Api::FollowsController < ApplicationController
 
     render 'api/users/not_followed'
   end
-=======
->>>>>>> f55d524dd73b1f5fc03b2d639537fd3698a66b79
 
   def create
     @follow = Follow.new(follower_id: current_user.id, followee_id: params[:user_id])

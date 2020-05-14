@@ -8,11 +8,7 @@ Rails.application.routes.draw do
       post '/follows', :to => 'follows#create'
       delete '/follows', :to => 'follows#destroy'
       collection do
-<<<<<<< HEAD
         resources :follows, only: [:index]
-=======
-        resource :follows, only: [:index]
->>>>>>> f55d524dd73b1f5fc03b2d639537fd3698a66b79
       end
     end
     resources :posts, only: [:index, :update, :show, :destroy, :create] do

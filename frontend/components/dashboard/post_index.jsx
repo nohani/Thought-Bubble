@@ -10,19 +10,12 @@ export default class PostIndex extends React.Component{
 
   componentDidMount(){
     
-<<<<<<< HEAD
     this.props.fetchPosts();
 
   }
 
   
 
-=======
-    this.props.fetchPosts()
-
-  }
-
->>>>>>> f55d524dd73b1f5fc03b2d639537fd3698a66b79
   // componentWillUnmount(){
   //   this.props.clearPostErrors();
   // }
