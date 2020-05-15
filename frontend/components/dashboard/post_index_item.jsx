@@ -49,6 +49,7 @@ export default class PostIndexItem extends React.Component{
     }
 
     const cUser = this.props.users[currentUser.id];
+    if (cUser === undefined) return null;
     const followButton = cUser.followed_user_ids.includes(post.author_id) ? (
       <button className="follow-button" onClick={(e) => this.handleUnfollow(e, post.author_id)}>Unfollow</button>
     ) : (<button className="follow-button" onClick={(e) => this.handleFollow(e, post.author_id)}>Follow</button>)
