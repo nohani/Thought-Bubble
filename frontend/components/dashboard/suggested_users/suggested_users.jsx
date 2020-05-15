@@ -15,7 +15,7 @@ export default class SuggestedUsers extends React.Component {
     const { deleteFollow, createFollow, selectedUsers, users, currentUser, fetchPosts, fetchUnfollowedUsers } = this.props;
     return (
       <>
-      <h2>Recommended Users:</h2>
+      <h2>Recommended Users</h2>
       <ul>
         {selectedUsers && selectedUsers.map((user, i) => {
           return <SuggestedUserItem 
