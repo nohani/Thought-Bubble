@@ -17,7 +17,8 @@ export default class SuggestedUserItem extends React.Component {
   render() {
     const {users, currentUser, user} = this.props;
     // const cUser = users[currentUser.id];
-    if (!user || !currentUser) return null;
+    if (!user) return null;
+    if (currentUser === undefined) return null;
 
       const followButton = currentUser.followed_user_ids.includes(user.id) ? (
         <div className="null-plus-icon"><i className="fas fa-plus-square"></i></div>
